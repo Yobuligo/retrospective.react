@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Input from "../../../components/input/Input";
 import styles from "./CommentInput.module.css";
 import { ICommentInputProps } from "./ICommentInputProps";
 
 const CommentInput: React.FC<ICommentInputProps> = (props) => {
   const [comment, setComment] = useState<string>("");
+  const [disableAddButton, setDisableAddButton] = useState(false);
+
+  useEffect(() => {
+    setDisableAddButton(comment === "");
+  }, [comment]);
 
   const clearComment = () => {
     setComment("");
@@ -27,7 +32,7 @@ const CommentInput: React.FC<ICommentInputProps> = (props) => {
         onChange={onChange}
         onEnter={onAdd}
       />
-      <button onClick={onAdd}>
+      <button disabled={disableAddButton} onClick={onAdd}>
         <span className="material-symbols-outlined">add</span>
       </button>
     </div>
