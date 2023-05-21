@@ -22,7 +22,7 @@ const Board: React.FC = () => {
           name={t.titleNegative}
         />
         <BoardSection
-          commentType={CommentType.Neutral}
+          commentType={CommentType.Proposal}
           name={t.titleProposal}
         />
       </div>

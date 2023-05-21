@@ -10,8 +10,8 @@ const CommentFooter: React.FC<ICommentFooterProps> = (props) => {
         return styles.negative;
       }
 
-      case CommentType.Neutral: {
-        return styles.neutral;
+      case CommentType.Proposal: {
+        return styles.proposal;
       }
 
       default: {
