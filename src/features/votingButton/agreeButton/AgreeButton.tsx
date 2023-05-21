@@ -1,4 +1,4 @@
-import EvaluationButton from "../components/EvaluationButton";
+import EvaluationButton from "../components/VotingButton";
 import styles from "./AgreeButton.module.css";
 
 const AgreeButton: React.FC = () => {

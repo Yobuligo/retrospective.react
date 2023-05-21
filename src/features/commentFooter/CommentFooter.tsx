@@ -1,6 +1,6 @@
 import { CommentType } from "../../types/CommentType";
-import AgreeButton from "../evaluationButton/agreeButton/AgreeButton";
-import DisagreeButton from "../evaluationButton/disagreeButton/DisagreeButton";
+import AgreeButton from "../votingButton/agreeButton/AgreeButton";
+import DisagreeButton from "../votingButton/disagreeButton/DisagreeButton";
 import styles from "./CommentFooter.module.css";
 import { ICommentFooterProps } from "./ICommentFooterProps";
 
