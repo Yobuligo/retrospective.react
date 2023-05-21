@@ -5,7 +5,7 @@ import { IBoardSection } from "./IBoardSectionProps";
 const BoardSection: React.FC<IBoardSection> = (props) => {
   return (
     <div className={styles.boardSection}>
-      <Section name={props.name} />
+      <Section commentType={props.commentType} name={props.name} />
     </div>
   );
 };

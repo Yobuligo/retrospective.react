@@ -1,0 +1,20 @@
+.comment {
+  padding: 1rem;
+}
+
+.commentCard {
+  margin: 0.75rem 0.75rem;
+  margin-left: 0;
+}
+
+.positive {
+  background-color: rgba(0, 128, 0, 0.205);
+}
+
+.negative {
+  background-color: rgba(255, 0, 0, 0.267);
+}
+
+.neutral {
+  background-color: rgba(255, 255, 0, 0.212);
+}
