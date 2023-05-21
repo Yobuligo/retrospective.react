@@ -16,8 +16,10 @@ const CommentInput: React.FC<ICommentInputProps> = (props) => {
   };
 
   const onAdd = () => {
-    props.onAdd?.(comment);
-    clearComment();
+    if (comment !== "") {
+      props.onAdd?.(comment);
+      clearComment();
+    }
   };
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
