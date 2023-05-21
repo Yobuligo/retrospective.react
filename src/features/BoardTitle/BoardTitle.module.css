@@ -1,23 +1,17 @@
 .boardTitle {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   font-size: xx-large;
   margin: 1rem;
-}
-
-.boardTitle input {
-  margin: 1rem;
-  font-size: xx-large;
-  text-align: right;
 }
 
 .boardTitleEnabled {
   border: 0px;
   border-bottom: 1px #000 solid;
+  margin-right: 1rem;
+  outline: none;
 }
 
 .boardTitleDisabled {
   border: 0px;
   background-color: white;
+  margin-right: 1rem;
 }

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Input from "../../components/input/Input";
 import styles from "./BoardTitle.module.css";
 import { IBoardTitleProps } from "./IBoardTitleProps";
 
@@ -17,16 +16,17 @@ const BoardTitle: React.FC<IBoardTitleProps> = (props) => {
 
   return (
     <div className={styles.boardTitle}>
-      <Input
+      <span
         className={`${
           enabled ? styles.boardTitleEnabled : styles.boardTitleDisabled
         }`}
-        value={title}
-        disabled={!enabled}
-        onEnter={toggle}
         onChange={onChange}
         onBlur={toggle}
-      />
+        role="textbox"
+        contentEditable={enabled}
+      >
+        {title}
+      </span>
       <button onClick={toggle}>
         <span className="material-symbols-outlined">edit</span>
       </button>

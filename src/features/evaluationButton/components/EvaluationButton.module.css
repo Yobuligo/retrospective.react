@@ -1,0 +1,19 @@
+.evaluationButton {
+  font-size: large;
+}
+
+.evaluationButton span {
+  margin-right: 0.5rem;
+}
+
+.evaluationButton button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: transparent;
+  border: 0px;
+}
+
+.evaluationButton button:hover {
+  background-color: rgba(211, 211, 211, 0.7);
+}
