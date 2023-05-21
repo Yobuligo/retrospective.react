@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Icon from "../../../components/icon/Icon";
+import { IconType } from "../../../components/icon/IconType";
 import Input from "../../../components/input/Input";
 import styles from "./CommentInput.module.css";
 import { ICommentInputProps } from "./ICommentInputProps";
@@ -35,7 +37,7 @@ const CommentInput: React.FC<ICommentInputProps> = (props) => {
         onEnter={onAdd}
       />
       <button disabled={disableAddButton} onClick={onAdd}>
-        <span className="material-symbols-outlined">add</span>
+        <Icon icon={IconType.Add} />
       </button>
     </div>
   );

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Icon from "../../../components/icon/Icon";
+import { IconType } from "../../../components/icon/IconType";
 import styles from "./BoardTitle.module.css";
 import { IBoardTitleProps } from "./IBoardTitleProps";
 
@@ -28,7 +30,7 @@ const BoardTitle: React.FC<IBoardTitleProps> = (props) => {
         {title}
       </span>
       <button onClick={toggle}>
-        <span className="material-symbols-outlined">edit</span>
+        <Icon icon={IconType.Edit} />
       </button>
     </div>
   );
