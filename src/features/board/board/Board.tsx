@@ -9,7 +9,7 @@ const Board: React.FC = () => {
   return (
     <div className={styles.board}>
       <div className={styles.boardTitle}>
-        <BoardTitle title="Default" />
+        <BoardTitle title={t.title} />
       </div>
 
       <div className={styles.boardSections}>

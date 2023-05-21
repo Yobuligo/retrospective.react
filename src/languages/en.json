@@ -1,5 +1,6 @@
 {
     "titlePositive": "What went well",
     "titleNegative": "What went wrong",
-    "titleProposal": "What can be improved"
+    "titleProposal": "What can be improved",
+    "title": "Default"
 }
