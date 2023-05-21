@@ -1,3 +1,21 @@
 .boardTitle {
   font-size: xx-large;
+  margin: 1rem;
+}
+
+.boardTitle input {
+  margin: 1rem;
+  font-size: xx-large;
+  text-align: right;
+  width: auto;
+}
+
+.boardTitleEnabled {
+  border: 0px;
+  border-bottom: 1px #000 solid;
+}
+
+.boardTitleDisabled {
+  border: 0px;
+  background-color: white;
 }
