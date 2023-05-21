@@ -1,28 +1,13 @@
 import Card from "../../components/card/Card";
-import { CommentType } from "../../types/CommentType";
+import CommentFooter from "../commentFooter/CommentFooter";
 import styles from "./Comment.module.css";
 import { ICommentProps } from "./ICommentProps";
 
 const Comment: React.FC<ICommentProps> = (props) => {
-  const backgroundColor = () => {
-    switch (props.commentType) {
-      case CommentType.Negative: {
-        return styles.negative;
-      }
-
-      case CommentType.Neutral: {
-        return styles.neutral;
-      }
-
-      default: {
-        return styles.positive;
-      }
-    }
-  };
-
   return (
-    <Card className={`${styles.commentCard} ${backgroundColor()}`}>
+    <Card className={styles.commentCard}>
       <div className={styles.comment}>{props.comment}</div>
+      <CommentFooter commentType={props.commentType} />
     </Card>
   );
 };

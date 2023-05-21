@@ -27,7 +27,6 @@ const BoardTitle: React.FC<IBoardTitleProps> = (props) => {
         onChange={onChange}
         onBlur={toggle}
       />
-
       <button onClick={toggle}>
         <span className="material-symbols-outlined">edit</span>
       </button>
