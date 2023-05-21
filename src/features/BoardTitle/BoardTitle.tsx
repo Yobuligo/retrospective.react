@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Input from "../../components/input/Input";
 import styles from "./BoardTitle.module.css";
 import { IBoardTitleProps } from "./IBoardTitleProps";
 
@@ -14,21 +15,15 @@ const BoardTitle: React.FC<IBoardTitleProps> = (props) => {
     setEnabled((previous) => !previous);
   };
 
-  const onEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      toggle();
-    }
-  };
   return (
     <div className={styles.boardTitle}>
-      <input
-        
+      <Input
         className={`${
           enabled ? styles.boardTitleEnabled : styles.boardTitleDisabled
         }`}
         value={title}
         disabled={!enabled}
-        onKeyUp={onEnter}
+        onEnter={toggle}
         onChange={onChange}
         onBlur={toggle}
       />

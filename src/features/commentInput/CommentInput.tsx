@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Input from "../../components/input/Input";
 import styles from "./CommentInput.module.css";
 import { ICommentInputProps } from "./ICommentInputProps";
 
@@ -17,19 +18,14 @@ const CommentInput: React.FC<ICommentInputProps> = (props) => {
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setComment(event.target.value);
 
-  const onEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      onAdd();
-    }
-  };
   return (
     <div className={styles.topic}>
-      <input
+      <Input
         type="text"
         value={comment}
         placeholder={props.hint}
         onChange={onChange}
-        onKeyUp={onEnter}
+        onEnter={onAdd}
       />
       <button onClick={onAdd}>
         <span className="material-symbols-outlined">add</span>
