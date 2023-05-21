@@ -1,0 +1,12 @@
+.commentDelete{
+    margin-right: 1rem;
+}
+
+.commentDelete button{
+    background-color: transparent;
+    border: 0px;
+}
+
+.commentDelete button:hover{
+    background-color: rgba(211, 211, 211, 0.7);
+}

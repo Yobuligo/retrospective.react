@@ -1,5 +1,6 @@
 import { CommentType } from "../../../types/CommentType";
 import VotingSection from "../../voting/votingSection/VotingSection";
+import CommentDelete from "../commentDelete/CommentDelete";
 import styles from "./CommentFooter.module.css";
 import { ICommentFooterProps } from "./ICommentFooterProps";
 
@@ -22,6 +23,7 @@ const CommentFooter: React.FC<ICommentFooterProps> = (props) => {
   return (
     <div className={`${styles.commentFooter} ${backgroundColor()}`}>
       <VotingSection />
+      <CommentDelete />
     </div>
   );
 };
