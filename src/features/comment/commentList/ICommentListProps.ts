@@ -1,5 +1,8 @@
+import { IComment } from "../../../model/IComment";
 import { CommentType } from "../../../types/CommentType";
-export interface ICommentListProps {
-  comments: string[];
+import { IHaveOnDeleteComment } from "../../types/IHaveOnDeleteComment";
+
+export interface ICommentListProps extends IHaveOnDeleteComment {
+  comments: IComment[];
   commentType: CommentType;
 }

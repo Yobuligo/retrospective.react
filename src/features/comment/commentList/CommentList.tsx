@@ -7,6 +7,7 @@ const CommentList: React.FC<ICommentListProps> = (props) => {
       key={crypto.randomUUID()}
       comment={comment}
       commentType={props.commentType}
+      onDelete={props.onDelete}
     />
   ));
   return <div>{items}</div>;

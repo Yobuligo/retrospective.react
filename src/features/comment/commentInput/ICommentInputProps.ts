@@ -1,4 +1,4 @@
 export interface ICommentInputProps {
   hint: string;
-  onAdd?: (comment: string) => void;
+  onAdd?: (text: string) => void;
 }
