@@ -1,4 +1,4 @@
-export interface ITopicProps {
+export interface ICommentInputProps {
   hint: string;
   onAdd?: (comment: string) => void;
 }

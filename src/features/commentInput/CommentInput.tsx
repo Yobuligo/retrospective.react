@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { IoIosAddCircleOutline } from "react-icons/io";
-import { ITopicProps } from "./ITopicProps";
+import { ICommentInputProps } from "./ICommentInputProps";
 import styles from "./Topic.module.css";
 
-const Topic: React.FC<ITopicProps> = (props) => {
+const CommentInput: React.FC<ICommentInputProps> = (props) => {
   const [comment, setComment] = useState<string>("");
 
   const clearComment = () => {
@@ -39,4 +39,4 @@ const Topic: React.FC<ITopicProps> = (props) => {
   );
 };
 
-export default Topic;
+export default CommentInput;

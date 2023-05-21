@@ -1,9 +1,9 @@
 import { useState } from "react";
 import CommentList from "../commentList/CommentList";
-import Topic from "../topic/Topic";
-import { ISectionProps } from "./ISectionProps";
+import CommentInput from "../commentInput/CommentInput";
+import { ICommentSectionProps } from "./ICommentSectionProps";
 
-const Section: React.FC<ISectionProps> = (props) => {
+const CommentSection: React.FC<ICommentSectionProps> = (props) => {
   const [comments, setComments] = useState<string[]>([]);
 
   const onAdd = (comment: string): void =>
@@ -11,10 +11,10 @@ const Section: React.FC<ISectionProps> = (props) => {
 
   return (
     <>
-      <Topic hint={props.name} onAdd={onAdd} />
+      <CommentInput hint={props.name} onAdd={onAdd} />
       <CommentList comments={comments} commentType={props.commentType} />
     </>
   );
 };
 
-export default Section;
+export default CommentSection;

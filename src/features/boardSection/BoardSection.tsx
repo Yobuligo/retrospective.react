@@ -1,11 +1,11 @@
-import Section from "../section/Section";
+import CommentSection from "../commentSection/CommentSection";
 import styles from "./BoardSection.module.css";
 import { IBoardSection } from "./IBoardSectionProps";
 
 const BoardSection: React.FC<IBoardSection> = (props) => {
   return (
     <div className={styles.boardSection}>
-      <Section commentType={props.commentType} name={props.name} />
+      <CommentSection commentType={props.commentType} name={props.name} />
     </div>
   );
 };
