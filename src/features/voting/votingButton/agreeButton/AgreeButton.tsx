@@ -4,12 +4,7 @@ import { IAgreeButtonProps } from "./IAgreeButtonProps";
 
 const AgreeButton: React.FC<IAgreeButtonProps> = (props) => {
   return (
-    <VotingButton
-      className={styles.agreeButton}
-      count={props.count}
-      icon="thumb_up"
-      onClick={props.onClick}
-    />
+    <VotingButton {...props} className={styles.agreeButton} icon="thumb_up" />
   );
 };
 
