@@ -5,8 +5,10 @@ import { ISectionProps } from "./ISectionProps";
 
 const Section: React.FC<ISectionProps> = (props) => {
   const [comments, setComments] = useState<string[]>([]);
-  const onAdd = (comment: string): void =>
+  
+  const onAdd = (comment: string): void =>  
     setComments((previous) => [...previous, comment]);
+
   return (
     <>
       <Topic hint={props.name} onAdd={onAdd} />

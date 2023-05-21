@@ -1,11 +1,7 @@
-import Section from "../features/section/Section";
+import Board from "../features/board/Board";
 
 const Homepage: React.FC = () => {
-  return (
-    <>
-      <Section name={"Was lief gut"} />
-    </>
-  );
+  return <Board />;
 };
 
 export default Homepage;
