@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { IoIosAddCircleOutline } from "react-icons/io";
 import styles from "./CommentInput.module.css";
 import { ICommentInputProps } from "./ICommentInputProps";
 
@@ -33,7 +32,7 @@ const CommentInput: React.FC<ICommentInputProps> = (props) => {
         onKeyUp={onEnter}
       />
       <button onClick={onAdd}>
-        <IoIosAddCircleOutline />
+        <span className="material-symbols-outlined">add</span>
       </button>
     </div>
   );

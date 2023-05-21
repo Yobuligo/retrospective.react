@@ -1,4 +1,13 @@
 .board {
   display: flex;
+  flex-direction: column;
+}
+
+.boardTitle {
+  align-self: center;
+}
+
+.boardSections {
+  display: flex;
   flex-direction: row;
 }
