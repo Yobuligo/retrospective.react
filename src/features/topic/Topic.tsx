@@ -18,6 +18,11 @@ const Topic: React.FC<ITopicProps> = (props) => {
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setComment(event.target.value);
 
+  const onEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      onAdd();
+    }
+  };
   return (
     <div className={styles.topic}>
       <input
@@ -25,6 +30,7 @@ const Topic: React.FC<ITopicProps> = (props) => {
         value={comment}
         placeholder={props.hint}
         onChange={onChange}
+        onKeyUp={onEnter}
       />
       <button onClick={onAdd}>
         <IoIosAddCircleOutline />
