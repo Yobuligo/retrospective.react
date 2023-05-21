@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoIosAddCircleOutline } from "react-icons/io";
+import styles from "./CommentInput.module.css";
 import { ICommentInputProps } from "./ICommentInputProps";
-import styles from "./Topic.module.css";
 
 const CommentInput: React.FC<ICommentInputProps> = (props) => {
   const [comment, setComment] = useState<string>("");
