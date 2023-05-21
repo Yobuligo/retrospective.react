@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Input from "../../components/input/Input";
+import Input from "../../../components/input/Input";
 import styles from "./CommentInput.module.css";
 import { ICommentInputProps } from "./ICommentInputProps";
 

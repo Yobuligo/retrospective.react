@@ -1,5 +1,5 @@
-import { CommentType } from "../../types/CommentType";
-import BoardTitle from "../BoardTitle/BoardTitle";
+import { CommentType } from "../../../types/CommentType";
+import BoardTitle from "../boardTitle/BoardTitle";
 import BoardSection from "../boardSection/BoardSection";
 import styles from "./Board.module.css";
 

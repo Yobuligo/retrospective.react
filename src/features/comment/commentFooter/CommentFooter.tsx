@@ -1,5 +1,5 @@
-import { CommentType } from "../../types/CommentType";
-import VotingSection from "../voting/votingSection/VotingSection";
+import { CommentType } from "../../../types/CommentType";
+import VotingSection from "../../voting/votingSection/VotingSection";
 import styles from "./CommentFooter.module.css";
 import { ICommentFooterProps } from "./ICommentFooterProps";
 

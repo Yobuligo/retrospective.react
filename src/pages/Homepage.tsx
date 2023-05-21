@@ -1,4 +1,4 @@
-import Board from "../features/board/Board";
+import Board from "../features/board/board/Board";
 
 const Homepage: React.FC = () => {
   return <Board />;

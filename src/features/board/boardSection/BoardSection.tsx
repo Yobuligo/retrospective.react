@@ -1,4 +1,4 @@
-import CommentSection from "../commentSection/CommentSection";
+import CommentSection from "../../comment/commentSection/CommentSection";
 import styles from "./BoardSection.module.css";
 import { IBoardSection } from "./IBoardSectionProps";
 

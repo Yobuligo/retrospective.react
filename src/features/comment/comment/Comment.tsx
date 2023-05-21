@@ -1,4 +1,4 @@
-import Card from "../../components/card/Card";
+import Card from "../../../components/card/Card";
 import CommentFooter from "../commentFooter/CommentFooter";
 import styles from "./Comment.module.css";
 import { ICommentProps } from "./ICommentProps";
