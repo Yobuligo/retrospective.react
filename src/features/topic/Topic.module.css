@@ -1,0 +1,12 @@
+.topic {
+}
+
+.topic input {
+  font-size: large;
+  border: 0px;
+  border-bottom: 1px #000 solid;
+}
+
+.topic button {
+  font-size: large;
+}

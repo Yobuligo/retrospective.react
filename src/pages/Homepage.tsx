@@ -1,9 +1,9 @@
-import Comment from "../components/comment/Comment";
+import Section from "../features/section/Section";
 
 const Homepage: React.FC = () => {
   return (
     <>
-      <Comment hint="Was lief gut"/>
+      <Section name={"Was lief gut"} />
     </>
   );
 };
