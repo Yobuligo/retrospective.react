@@ -1,6 +1,5 @@
 import { CommentType } from "../../types/CommentType";
-import AgreeButton from "../votingButton/agreeButton/AgreeButton";
-import DisagreeButton from "../votingButton/disagreeButton/DisagreeButton";
+import VotingSection from "../voting/votingSection/VotingSection";
 import styles from "./CommentFooter.module.css";
 import { ICommentFooterProps } from "./ICommentFooterProps";
 
@@ -22,8 +21,7 @@ const CommentFooter: React.FC<ICommentFooterProps> = (props) => {
   };
   return (
     <div className={`${styles.commentFooter} ${backgroundColor()}`}>
-      <AgreeButton />
-      <DisagreeButton />
+      <VotingSection />
     </div>
   );
 };
