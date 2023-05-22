@@ -1,29 +1,54 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AgreeButton from "../votingButton/agreeButton/AgreeButton";
 import DisagreeButton from "../votingButton/disagreeButton/DisagreeButton";
+import { IVotingSectionProps } from "./IVotingSectionProps";
 
-const VotingSection: React.FC = () => {
-  const [countAgree, setCountAgree] = useState(0);
-  const [countDisagree, setCountDisagree] = useState(0);
+const VotingSection: React.FC<IVotingSectionProps> = (props) => {
+  const [countAgree, setCountAgree] = useState(props.comment.countAgrees);
+  const [countDisagree, setCountDisagree] = useState(
+    props.comment.countDisagrees
+  );
+  const [disableAgree, setDisableAgree] = useState(false);
+  const [disableDisagree, setDisableDisagree] = useState(false);
   const [voted, setVoted] = useState(false);
-
-  useEffect(() => {
-    if (countAgree > 0 || countDisagree > 0) {
-      setVoted(true);
-    }
-  }, [countAgree, countDisagree]);
 
   return (
     <>
       <AgreeButton
         count={countAgree}
-        disabled={voted}
-        onClick={() => setCountAgree((previous) => previous + 1)}
+        disabled={disableAgree}
+        onClick={() => {
+          if (voted) {
+            props.comment.countAgrees--;
+            setCountAgree((previous) => previous - 1);
+            setDisableAgree(false);
+            setDisableDisagree(false);
+          } else {
+            props.comment.countAgrees++;
+            setCountAgree((previous) => previous + 1);
+            setDisableAgree(false);
+            setDisableDisagree(true);
+          }
+          setVoted((previous) => !previous);
+        }}
       />
       <DisagreeButton
         count={countDisagree}
-        disabled={voted}
-        onClick={() => setCountDisagree((previous) => previous + 1)}
+        disabled={disableDisagree}
+        onClick={() => {
+          if (voted) {
+            props.comment.countDisagrees--;
+            setCountDisagree((previous) => previous - 1);
+            setDisableAgree(false);
+            setDisableDisagree(false);
+          } else {
+            props.comment.countDisagrees++;
+            setCountDisagree((previous) => previous + 1);
+            setDisableAgree(true);
+            setDisableDisagree(false);
+          }
+          setVoted((previous) => !previous);
+        }}
       />
     </>
   );

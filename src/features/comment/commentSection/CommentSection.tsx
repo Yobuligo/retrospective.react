@@ -10,7 +10,12 @@ const CommentSection: React.FC<ICommentSectionProps> = (props) => {
   const onAdd = (text: string): void =>
     setComments((previous) => [
       ...previous,
-      { id: crypto.randomUUID(), text: text },
+      {
+        id: crypto.randomUUID(),
+        countAgrees: 0,
+        countDisagrees: 0,
+        text: text,
+      },
     ]);
 
   const onDelete = (comment: IComment): void => {
