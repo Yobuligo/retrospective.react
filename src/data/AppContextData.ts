@@ -1,7 +1,9 @@
 import { IComment } from "../model/IComment";
+import { DataObject as DataObjectDummy } from "../types/DataObjectDummy";
+import { IDataObject } from "../types/IDataObject";
 
 export class AppContextData {
-  comments: IComment[] = [];
-  onAddComment(comment: IComment): void {}
-  onDeleteComment(comment: IComment): void {}
+  positiveComment: IDataObject<IComment> = new DataObjectDummy();
+  negativeComment: IDataObject<IComment> = new DataObjectDummy();
+  proposalComment: IDataObject<IComment> = new DataObjectDummy();
 }

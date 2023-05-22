@@ -1,38 +1,27 @@
-import { useState } from "react";
-import { IComment } from "../../../model/IComment";
+import { useContext } from "react";
+import { AppContext } from "../../../data/AppContext";
 import CommentInput from "../commentInput/CommentInput";
 import CommentList from "../commentList/CommentList";
 import { ICommentSectionProps } from "./ICommentSectionProps";
 
 const CommentSection: React.FC<ICommentSectionProps> = (props) => {
-  const [comments, setComments] = useState<IComment[]>([]);
+  const context = useContext(AppContext);
 
   const onAdd = (text: string): void =>
-    setComments((previous) => [
-      ...previous,
-      {
-        id: crypto.randomUUID(),
-        countAgrees: 0,
-        countDisagrees: 0,
-        text: text,
-      },
-    ]);
-
-  const onDelete = (comment: IComment): void => {
-    setComments((previous) => {
-      const index = previous.findIndex((element) => element === comment);
-      previous.splice(index, 1);
-      return [...previous];
+    context.positiveComment.onAdd({
+      id: crypto.randomUUID(),
+      countAgrees: 0,
+      countDisagrees: 0,
+      text: text,
     });
-  };
 
   return (
     <>
       <CommentInput hint={props.name} onAdd={onAdd} />
       <CommentList
-        comments={comments}
+        comments={context.positiveComment.dataObjects}
         commentType={props.commentType}
-        onDelete={onDelete}
+        onDelete={context.positiveComment.onDelete}
       />
     </>
   );
