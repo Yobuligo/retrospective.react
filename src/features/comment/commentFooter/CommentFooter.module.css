@@ -3,7 +3,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: end;
-  height: 3rem;  
+  height: 3rem;
+}
+
+.commentFooterDivider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;  
+  border-left: 1px #000 solid;
+  margin-left: 0.3rem;
 }
 
 .positive {

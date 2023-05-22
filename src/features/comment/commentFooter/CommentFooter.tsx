@@ -24,9 +24,11 @@ const CommentFooter: React.FC<ICommentFooterProps> = (props) => {
 
   return (
     <div className={`${styles.commentFooter} ${backgroundColor()}`}>
-      <VotingSection />
-      <CommentEdit onEdit={() => props.onEdit(props.comment)} />
-      <CommentDelete onDelete={() => props.onDelete(props.comment)} />
+        <VotingSection />
+      <div className={styles.commentFooterDivider}>
+        <CommentEdit onEdit={() => props.onEdit(props.comment)} />
+        <CommentDelete onDelete={() => props.onDelete(props.comment)} />
+      </div>
     </div>
   );
 };
