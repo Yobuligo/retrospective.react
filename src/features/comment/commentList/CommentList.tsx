@@ -4,7 +4,7 @@ import { ICommentListProps } from "./ICommentListProps";
 const CommentList: React.FC<ICommentListProps> = (props) => {
   const items = props.comments.map((comment) => (
     <Comment
-      key={crypto.randomUUID()}
+      key={comment.id}
       comment={comment}
       commentType={props.commentType}
       onDelete={props.onDelete}
