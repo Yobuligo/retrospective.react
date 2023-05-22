@@ -1,4 +1,4 @@
-import { useDataAccessObject } from "../hooks/useDataObject";
+import { useDataAccessObject } from "../hooks/useDataAccessObject";
 import { IComment } from "../model/IComment";
 import { AppContext } from "./AppContext";
 import { IAppContextComponentProps } from "./IAppContextComponentProps";
