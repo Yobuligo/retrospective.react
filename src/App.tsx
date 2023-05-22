@@ -1,9 +1,10 @@
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import AppContextComponent from "./data/AppContextComponent";
-import Homepage from "./pages/Homepage";
 import Summary from "./pages/Summary";
+
+const Homepage = lazy(() => import("./pages/Homepage"));
 
 function App() {
   const [page, setPage] = useState(0);
@@ -11,10 +12,14 @@ function App() {
   const content = () => {
     switch (page) {
       case 0: {
-        return <Homepage />;
+        return <Summary />;
       }
       case 1: {
-        return <Summary />;
+        return (
+          <Suspense fallback={<p>...Loading</p>}>
+            <Homepage />
+          </Suspense>
+        );
       }
     }
   };
