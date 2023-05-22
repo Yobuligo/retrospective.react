@@ -2,6 +2,7 @@ import { useState } from "react";
 import AgreeButton from "../votingButton/agreeButton/AgreeButton";
 import DisagreeButton from "../votingButton/disagreeButton/DisagreeButton";
 import { IVotingSectionProps } from "./IVotingSectionProps";
+import { useToggle } from "../../../hooks/useToggle";
 
 const VotingSection: React.FC<IVotingSectionProps> = (props) => {
   const [countAgree, setCountAgree] = useState(props.comment.countAgrees);
@@ -10,7 +11,7 @@ const VotingSection: React.FC<IVotingSectionProps> = (props) => {
   );
   const [disableAgree, setDisableAgree] = useState(false);
   const [disableDisagree, setDisableDisagree] = useState(false);
-  const [voted, setVoted] = useState(false);
+  const [voted, toggleVoted] = useToggle(false)
 
   return (
     <>
@@ -29,7 +30,7 @@ const VotingSection: React.FC<IVotingSectionProps> = (props) => {
             setDisableAgree(false);
             setDisableDisagree(true);
           }
-          setVoted((previous) => !previous);
+          toggleVoted();
         }}
       />
       <DisagreeButton
@@ -47,7 +48,7 @@ const VotingSection: React.FC<IVotingSectionProps> = (props) => {
             setDisableAgree(true);
             setDisableDisagree(false);
           }
-          setVoted((previous) => !previous);
+          toggleVoted();
         }}
       />
     </>

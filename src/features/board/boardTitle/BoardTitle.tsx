@@ -1,20 +1,18 @@
 import { useState } from "react";
 import Icon from "../../../components/icon/Icon";
 import { IconType } from "../../../components/icon/IconType";
+import { useToggle } from "../../../hooks/useToggle";
 import styles from "./BoardTitle.module.css";
 import { IBoardTitleProps } from "./IBoardTitleProps";
 
 const BoardTitle: React.FC<IBoardTitleProps> = (props) => {
   const [title, setTitle] = useState(props.title);
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, toggleEnabled] = useToggle(false);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setTitle(event.target.value);
-  };
 
-  const toggle = () => {
-    setEnabled((previous) => !previous);
-  };
+  const toggle = () => toggleEnabled();
 
   return (
     <div className={styles.boardTitle}>

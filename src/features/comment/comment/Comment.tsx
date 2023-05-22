@@ -1,19 +1,20 @@
 import { useState } from "react";
 import Card from "../../../components/card/Card";
+import { useToggle } from "../../../hooks/useToggle";
 import CommentFooter from "../commentFooter/CommentFooter";
 import styles from "./Comment.module.css";
 import { ICommentProps } from "./ICommentProps";
 
 const Comment: React.FC<ICommentProps> = (props) => {
   const [comment, setComment] = useState(props.comment.text);
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, toggleEnabled] = useToggle(false);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     props.comment.text = event.target.value;
     setComment(event.target.value);
   };
 
-  const toggle = () => setEnabled((previous) => !previous);
+  const toggle = () => toggleEnabled();
 
   return (
     <Card className={styles.commentCard}>
