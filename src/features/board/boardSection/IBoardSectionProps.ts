@@ -1,8 +1,8 @@
 import { IComment } from "../../../model/IComment";
 import { CommentType } from "../../../types/CommentType";
-import { IDataObject } from "../../../types/IDataObject";
+import { IDataAccessObject } from "../../../types/IDataAccessObject";
 export interface IBoardSection {
   commentType: CommentType;
-  dataObject: IDataObject<IComment>;
+  dataObject: IDataAccessObject<IComment>;
   name: string;
 }

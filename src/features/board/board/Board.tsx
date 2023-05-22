@@ -18,17 +18,17 @@ const Board: React.FC = () => {
       <div className={styles.boardSections}>
         <BoardSection
           commentType={CommentType.Positive}
-          dataObject={context.positiveComment}
+          dataObject={context.comments.positiveDAO}
           name={t.titlePositive}
         />
         <BoardSection
           commentType={CommentType.Negative}
-          dataObject={context.negativeComment}
+          dataObject={context.comments.negativeDAO}
           name={t.titleNegative}
         />
         <BoardSection
           commentType={CommentType.Proposal}
-          dataObject={context.proposalComment}
+          dataObject={context.comments.proposalDAO}
           name={t.titleProposal}
         />
       </div>

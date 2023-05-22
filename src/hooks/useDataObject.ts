@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { IDataObject } from "../types/IDataObject";
+import { IDataAccessObject } from "../types/IDataAccessObject";
 
-export const useDataObject = <T>(): IDataObject<T> => {
+export const useDataAccessObject = <T>(): IDataAccessObject<T> => {
   const [dataObjects, setDataObjects] = useState<T[]>([]);
 
   const onAdd = (dataObject: T) => {

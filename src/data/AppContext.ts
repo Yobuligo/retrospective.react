@@ -1,4 +1,13 @@
 import { createContext } from "react";
-import { AppContextData } from "./AppContextData";
+import { IComment } from "../model/IComment";
+import { DataAccessObjectDummy } from "../types/DataAccessObjectDummy";
 
-export const AppContext = createContext(new AppContextData());
+export const AppContextData = {
+  comments: {
+    negativeDAO: new DataAccessObjectDummy<IComment>(),
+    positiveDAO: new DataAccessObjectDummy<IComment>(),
+    proposalDAO: new DataAccessObjectDummy<IComment>(),
+  },
+};
+
+export const AppContext = createContext(AppContextData);
