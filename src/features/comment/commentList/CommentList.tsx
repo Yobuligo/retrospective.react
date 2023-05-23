@@ -10,7 +10,7 @@ const CommentList: React.FC<ICommentListProps> = (props) => {
       onDelete={props.onDelete}
     />
   ));
-  return <div>{items}</div>;
+  return <>{items}</>;
 };
 
 export default CommentList;

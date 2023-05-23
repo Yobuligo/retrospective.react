@@ -1,13 +1,16 @@
 import { IInputProps } from "./IInputProps";
 
 const Input: React.FC<IInputProps> = (props) => {
-  const onEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const { onEnter, ...newProps } = props;
+
+  const onEnterPressed = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       props.onEnter?.();
     }
+    props.onKeyUp?.(event);
   };
 
-  return <input {...props} onKeyUp={onEnter} />;
+  return <input {...newProps} onKeyUp={onEnterPressed} />;
 };
 
 export default Input;

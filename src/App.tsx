@@ -1,6 +1,7 @@
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import { Suspense, lazy, useState } from "react";
+import ErrorBoundary from "./components/error/ErrorBoundary";
 import AppContextComponent from "./data/AppContextComponent";
 import Summary from "./pages/Summary";
 
@@ -25,13 +26,15 @@ function App() {
   };
 
   return (
-    <AppContextComponent>
-      <Tabs value={page} onChange={(_, value) => setPage(value)}>
-        <Tab label="Board" />
-        <Tab label="Summary" />
-      </Tabs>
-      {content()}
-    </AppContextComponent>
+    <ErrorBoundary>
+      <AppContextComponent>
+        <Tabs value={page} onChange={(_, value) => setPage(value)}>
+          <Tab label="Board" />
+          <Tab label="Summary" />
+        </Tabs>
+        {content()}
+      </AppContextComponent>
+    </ErrorBoundary>
   );
 }
 

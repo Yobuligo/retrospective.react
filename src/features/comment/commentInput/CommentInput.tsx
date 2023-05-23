@@ -29,6 +29,18 @@ const CommentInput: React.FC<ICommentInputProps> = (props) => {
 
   return (
     <div className={styles.topic}>
+      {/* <input
+        type="text"
+        value={comment}
+        placeholder={props.hint}
+        onChange={onChange}
+        onKeyUp={(event) => {
+          if (event.key === "Enter") {
+            onAdd();
+          }
+        }}
+      /> */}
+
       <Input
         type="text"
         value={comment}
