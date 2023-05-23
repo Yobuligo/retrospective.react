@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../../../data/AppContext";
 import { useTranslation } from "../../../hooks/useTranslation";
 import { CommentType } from "../../../types/CommentType";
+import { Language } from "../../language/Language";
 import BoardSection from "../boardSection/BoardSection";
 import BoardTitle from "../boardTitle/BoardTitle";
 import styles from "./Board.module.css";
@@ -13,6 +14,9 @@ const Board: React.FC = () => {
     <div className={styles.board}>
       <div className={styles.boardTitle}>
         <BoardTitle title={t.title} />
+      </div>
+      <div>
+        <Language />
       </div>
 
       <div className={styles.boardSections}>
