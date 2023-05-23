@@ -1,5 +1,5 @@
 import { useDataAccessObject } from "../hooks/useDataAccessObject";
-import { useDataContainer } from "../hooks/useDataContainer";
+import { useValue } from "../hooks/useValue";
 import { IComment } from "../model/IComment";
 import { Language } from "../types/Language";
 import { AppContext } from "./AppContext";
@@ -14,7 +14,7 @@ const AppContextComponent: React.FC<IAppContextComponentProps> = (props) => {
           positiveDAO: useDataAccessObject<IComment>(),
           proposalDAO: useDataAccessObject<IComment>(),
         },
-        language: useDataContainer<Language>(Language.en),
+        language: useValue<Language>(Language.en),
       }}
     >
       {props.children}
