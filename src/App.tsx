@@ -1,18 +1,18 @@
 import styles from "./App.module.css";
 import ErrorBoundary from "./components/error/ErrorBoundary";
-import AppContextComponent from "./data/AppContextComponent";
+import AppContextFrame from "./features/app/AppContextFrame";
 import { LanguageSelection } from "./features/language/LanguageSelection";
 import { TabSection } from "./features/tabs/TabSection";
 
 function App() {
   return (
     <ErrorBoundary>
-      <AppContextComponent>
+      <AppContextFrame>
         <div className={styles.appLanguageSelection}>
           <LanguageSelection />
         </div>
         <TabSection />
-      </AppContextComponent>
+      </AppContextFrame>
     </ErrorBoundary>
   );
 }
