@@ -1,4 +1,8 @@
 .languageSelection {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  font-size: medium;
 }
 
 .languageSelection option {
@@ -7,4 +11,8 @@
 
 .languageSelection select {
   font-size: medium;
+}
+
+.languageSelectionText {
+  margin-right: 0.5rem;
 }

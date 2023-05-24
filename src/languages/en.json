@@ -2,5 +2,6 @@
     "titlePositive": "What went well",
     "titleNegative": "What went wrong",
     "titleProposal": "What can be improved",
-    "title": "Default"
+    "title": "Default",
+    "language": "Language"
 }
