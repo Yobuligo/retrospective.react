@@ -1,0 +1,15 @@
+.summaryHeader {
+  height: 5rem;
+}
+
+.summaryHeaderPositive {
+  background-color: var(--positive);
+}
+
+.summaryHeaderNegative {
+  background-color: var(--negative);
+}
+
+.summaryHeaderProposal {
+  background-color: var(--proposal);
+}

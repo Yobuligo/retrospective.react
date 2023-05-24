@@ -1,5 +1,11 @@
+import { SummaryFrame } from "../features/summary/summaryFrame/SummaryFrame";
+
 const Summary: React.FC = () => {
-  return <>Test</>;
+  return (
+    <>
+      <SummaryFrame />
+    </>
+  );
 };
 
 export default Summary;
