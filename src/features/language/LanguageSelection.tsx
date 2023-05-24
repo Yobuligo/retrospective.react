@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../../data/AppContext";
 import { LanguageType } from "../../types/LanguageType";
+import styles from "./LanguageSelection.module.css";
 
-export const Language: React.FC = () => {
+export const LanguageSelection: React.FC = () => {
   const context = useContext(AppContext);
   const [language, setLanguage] = useState(
     LanguageType[context.language.value]
@@ -13,13 +14,13 @@ export const Language: React.FC = () => {
     .map((language) => <option key={language}>{language}</option>);
 
   return (
-    <>
+    <div className={styles.languageSelection}>
       <select
         value={language}
         onChange={(event) => setLanguage(event.target.value)}
       >
         {items}
       </select>
-    </>
+    </div>
   );
 };

@@ -1,0 +1,10 @@
+.languageSelection {
+}
+
+.languageSelection option {
+  font-size: medium;
+}
+
+.languageSelection select {
+  font-size: medium;
+}
