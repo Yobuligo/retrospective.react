@@ -2,9 +2,9 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import { Suspense, lazy, useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
-import Summary from "../../pages/Summary";
 
 const Homepage = lazy(() => import("../../pages/Homepage"));
+const Summary = lazy(() => import("../../pages/Summary"));
 
 export const TabSection: React.FC = () => {
   const { t } = useTranslation();
@@ -13,12 +13,16 @@ export const TabSection: React.FC = () => {
   const content = () => {
     switch (page) {
       case 0: {
-        return <Summary />;
+        return (
+          <Suspense fallback={<p>...Loading</p>}>
+            <Homepage />
+          </Suspense>
+        );
       }
       case 1: {
         return (
           <Suspense fallback={<p>...Loading</p>}>
-            <Homepage />
+            <Summary />
           </Suspense>
         );
       }
