@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "../data/AppContext";
 import { LanguageType } from "../types/LanguageType";
 
 export const useLanguage = (): [
   language: LanguageType,
   setLanguage: (newLanguage: LanguageType) => void
 ] => {
-  const [language, setLanguage] = useState<LanguageType>(LanguageType.en);
-  return [language, setLanguage];
+  const context = useContext(AppContext);
+  return [context.language.value, context.language.setValue];
 };
