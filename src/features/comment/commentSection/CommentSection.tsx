@@ -1,3 +1,4 @@
+import { VotingState } from "../../../model/VotingState";
 import CommentInput from "../commentInput/CommentInput";
 import CommentList from "../commentList/CommentList";
 import { ICommentSectionProps } from "./ICommentSectionProps";
@@ -8,6 +9,7 @@ const CommentSection: React.FC<ICommentSectionProps> = (props) => {
       id: crypto.randomUUID(),
       countAgrees: 0,
       countDisagrees: 0,
+      votingState: VotingState.Open,
       text: text,
     });
 

@@ -1,55 +1,51 @@
 import { useState } from "react";
-import { useToggle } from "../../../hooks/useToggle";
+import { VotingState } from "../../../model/VotingState";
 import AgreeButton from "../votingButton/agreeButton/AgreeButton";
 import DisagreeButton from "../votingButton/disagreeButton/DisagreeButton";
 import { IVotingSectionProps } from "./IVotingSectionProps";
 
 const VotingSection: React.FC<IVotingSectionProps> = (props) => {
+  const [votingState, setVotingState] = useState(props.comment.votingState);
   const [countAgree, setCountAgree] = useState(props.comment.countAgrees);
   const [countDisagree, setCountDisagree] = useState(
     props.comment.countDisagrees
   );
-  const [disableAgree, setDisableAgree] = useState(false);
-  const [disableDisagree, setDisableDisagree] = useState(false);
-  const [voted, toggleVoted] = useToggle(false);
 
-  const setDisables = (agree: boolean, disagree: boolean) => {
-    setDisableAgree(agree);
-    setDisableDisagree(disagree);
+  const toggleVote = (votingState: VotingState) => {
+    props.comment.votingState = votingState;
+    setVotingState(votingState);
   };
 
   return (
     <>
       <AgreeButton
         count={countAgree}
-        disabled={disableAgree}
+        disabled={votingState === VotingState.Disagree}
         onClick={() => {
-          if (voted) {
+          if (props.comment.votingState === VotingState.Agree) {
             props.comment.countAgrees--;
             setCountAgree((previous) => previous - 1);
-            setDisables(false, false);
+            toggleVote(VotingState.Open);
           } else {
             props.comment.countAgrees++;
             setCountAgree((previous) => previous + 1);
-            setDisables(false, true);
+            toggleVote(VotingState.Agree);
           }
-          toggleVoted();
         }}
       />
       <DisagreeButton
         count={countDisagree}
-        disabled={disableDisagree}
+        disabled={votingState === VotingState.Agree}
         onClick={() => {
-          if (voted) {
+          if (props.comment.votingState === VotingState.Disagree) {
             props.comment.countDisagrees--;
             setCountDisagree((previous) => previous - 1);
-            setDisables(false, false);
+            toggleVote(VotingState.Open);
           } else {
             props.comment.countDisagrees++;
             setCountDisagree((previous) => previous + 1);
-            setDisables(true, false);
+            toggleVote(VotingState.Disagree);
           }
-          toggleVoted();
         }}
       />
     </>
