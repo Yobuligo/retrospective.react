@@ -3,6 +3,7 @@ import ErrorBoundary from "./components/error/ErrorBoundary";
 import AppContextFrame from "./features/app/AppContextFrame";
 import { LanguageSelection } from "./features/language/LanguageSelection";
 import { TabSection } from "./features/tabs/TabSection";
+import "./color.css";
 
 function App() {
   return (

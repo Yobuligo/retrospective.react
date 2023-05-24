@@ -10,19 +10,19 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: end;  
+  justify-content: end;
   border-left: 1px #000 solid;
   margin-left: 0.3rem;
 }
 
 .positive {
-  background-color: rgba(0, 128, 0, 0.205);
+  background-color: var(--positive);
 }
 
 .negative {
-  background-color: rgba(255, 0, 0, 0.267);
+  background-color: var(--negative);
 }
 
 .proposal {
-  background-color: rgba(255, 255, 0, 0.212);
+  background-color: var(--proposal);
 }
