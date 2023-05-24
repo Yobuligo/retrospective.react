@@ -7,12 +7,12 @@ import BoardTitle from "../boardTitle/BoardTitle";
 import styles from "./Board.module.css";
 
 const Board: React.FC = () => {
-  const context = useContext(AppContext);
   const { t } = useTranslation();
+  const context = useContext(AppContext);
   return (
     <div className={styles.board}>
       <div className={styles.boardTitle}>
-        <BoardTitle title={t.title} />
+        <BoardTitle />
       </div>
       <div className={styles.boardSections}>
         <BoardSection

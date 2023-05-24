@@ -1,3 +1,1 @@
-export interface IBoardTitleProps {
-  title: string;
-}
+export interface IBoardTitleProps {}

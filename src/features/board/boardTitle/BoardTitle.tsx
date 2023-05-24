@@ -2,11 +2,13 @@ import { useState } from "react";
 import Icon from "../../../components/icon/Icon";
 import { IconType } from "../../../components/icon/IconType";
 import { useToggle } from "../../../hooks/useToggle";
+import { useTranslation } from "../../../hooks/useTranslation";
 import styles from "./BoardTitle.module.css";
 import { IBoardTitleProps } from "./IBoardTitleProps";
 
 const BoardTitle: React.FC<IBoardTitleProps> = (props) => {
-  const [title, setTitle] = useState(props.title);
+  const { t } = useTranslation();
+  const [title, setTitle] = useState(t.sprintTitle);
   const [enabled, toggleEnabled] = useToggle(false);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
