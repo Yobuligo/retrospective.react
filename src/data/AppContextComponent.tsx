@@ -1,5 +1,6 @@
 import { useDataAccessObject } from "../hooks/useDataAccessObject";
-import { useValue } from "../hooks/useValue";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useStateToValue } from "../hooks/useStateToValue";
 import { IComment } from "../model/IComment";
 import { LanguageType } from "../types/LanguageType";
 import { AppContext } from "./AppContext";
@@ -14,7 +15,7 @@ const AppContextComponent: React.FC<IAppContextComponentProps> = (props) => {
           positiveDAO: useDataAccessObject<IComment>(),
           proposalDAO: useDataAccessObject<IComment>(),
         },
-        language: useValue<LanguageType>(LanguageType.en),
+        language: useStateToValue(useLocalStorage("language", LanguageType.en)),
       }}
     >
       {props.children}

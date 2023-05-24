@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IValue } from "../types/IValue";
+import { useStateToValue } from "./useStateToValue";
 
 export const useValue = <T>(initialValue: T): IValue<T> => {
-  const [value, setValue] = useState<T>(initialValue);
-  return { value, setValue };
+  return useStateToValue(useState<T>(initialValue));
 };
