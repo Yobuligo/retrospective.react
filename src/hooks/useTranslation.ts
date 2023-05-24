@@ -1,9 +1,11 @@
 import * as translations from "../languages";
+import { LanguageType } from "../types/LanguageType";
+import { useLanguage } from "./useLanguage";
 
 export const useTranslation = () => {
-  const language: string = "en";
+  const [language] = useLanguage();
   switch (language) {
-    case "de": {
+    case LanguageType.de: {
       return { t: translations["de"] };
     }
     default: {
