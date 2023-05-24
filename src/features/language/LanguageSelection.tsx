@@ -1,15 +1,11 @@
-import { useContext, useState } from "react";
-import { AppContext } from "../../data/AppContext";
+import { useLanguage } from "../../hooks/useLanguage";
 import { useTranslation } from "../../hooks/useTranslation";
 import { LanguageType } from "../../types/LanguageType";
 import styles from "./LanguageSelection.module.css";
 
 export const LanguageSelection: React.FC = () => {
   const { t } = useTranslation();
-  const context = useContext(AppContext);
-  const [language, setLanguage] = useState(
-    LanguageType[context.language.value]
-  );
+  const [language, setLanguage] = useLanguage();
 
   const items = Object.keys(LanguageType)
     .filter((element) => !(parseInt(element) >= 0))
@@ -20,8 +16,11 @@ export const LanguageSelection: React.FC = () => {
       <div className={styles.languageSelectionText}>{t.language}</div>
       <div>
         <select
-          value={language}
-          onChange={(event) => setLanguage(event.target.value)}
+          value={LanguageType[language]}
+          onChange={(event) => {
+            const index = (LanguageType as any)[event.target.value];
+            setLanguage(index);
+          }}
         >
           {items}
         </select>
