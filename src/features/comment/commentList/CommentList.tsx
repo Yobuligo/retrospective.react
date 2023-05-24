@@ -1,9 +1,9 @@
-import Comment from "../comment/Comment";
+import CommentCard from "../commentCard/CommentCard";
 import { ICommentListProps } from "./ICommentListProps";
 
 const CommentList: React.FC<ICommentListProps> = (props) => {
   const items = props.comments.map((comment) => (
-    <Comment
+    <CommentCard
       key={comment.id}
       comment={comment}
       commentType={props.commentType}

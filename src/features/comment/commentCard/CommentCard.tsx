@@ -2,10 +2,10 @@ import { useState } from "react";
 import Card from "../../../components/card/Card";
 import { useToggle } from "../../../hooks/useToggle";
 import CommentFooter from "../commentFooter/CommentFooter";
-import styles from "./Comment.module.css";
-import { ICommentProps } from "./ICommentProps";
+import styles from "./CommentCard.module.css";
+import { ICommentCardProps } from "./ICommentCardProps";
 
-const Comment: React.FC<ICommentProps> = (props) => {
+const CommentCard: React.FC<ICommentCardProps> = (props) => {
   const [comment, setComment] = useState(props.comment.text);
   const [enabled, toggleEnabled] = useToggle(false);
 
@@ -18,7 +18,7 @@ const Comment: React.FC<ICommentProps> = (props) => {
 
   return (
     <Card className={styles.commentCard}>
-      <div className={styles.comment}>
+      <div className={styles.commentCardDetails}>
         <span
           onChange={onChange}
           onBlur={toggle}
@@ -38,4 +38,4 @@ const Comment: React.FC<ICommentProps> = (props) => {
   );
 };
 
-export default Comment;
+export default CommentCard;
