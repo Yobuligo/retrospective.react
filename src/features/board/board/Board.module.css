@@ -5,12 +5,13 @@
 
 .boardTitle {
   align-self: center;
+  margin-bottom: 2rem;
 }
 
 .boardSections {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-evenly; 
 }
 
 .boardSection {
