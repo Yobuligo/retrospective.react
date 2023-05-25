@@ -14,14 +14,14 @@ const CommentSection: React.FC<ICommentSectionProps> = (props) => {
     });
 
   return (
-    <>
+    <div className={props.className}>
       <CommentInput hint={props.name} onAdd={onAdd} />
       <CommentList
         comments={props.dataObject.dataObjects}
         commentType={props.commentType}
         onDelete={props.dataObject.onDelete}
       />
-    </>
+    </div>
   );
 };
 

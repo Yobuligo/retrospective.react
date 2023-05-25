@@ -15,21 +15,27 @@ const Board: React.FC = () => {
         <BoardTitle />
       </div>
       <div className={styles.boardSections}>
-        <BoardSection
-          commentType={CommentType.Positive}
-          dataObject={context.comments.positiveDAO}
-          name={t.titlePositive}
-        />
-        <BoardSection
-          commentType={CommentType.Negative}
-          dataObject={context.comments.negativeDAO}
-          name={t.titleNegative}
-        />
-        <BoardSection
-          commentType={CommentType.Proposal}
-          dataObject={context.comments.proposalDAO}
-          name={t.titleProposal}
-        />
+        <div className={styles.boardSection}>
+          <BoardSection
+            commentType={CommentType.Positive}
+            dataObject={context.comments.positiveDAO}
+            name={t.titlePositive}
+          />
+        </div>
+        <div className={styles.boardSection}>
+          <BoardSection
+            commentType={CommentType.Negative}
+            dataObject={context.comments.negativeDAO}
+            name={t.titleNegative}
+          />
+        </div>
+        <div className={styles.boardSection}>
+          <BoardSection
+            commentType={CommentType.Proposal}
+            dataObject={context.comments.proposalDAO}
+            name={t.titleProposal}
+          />
+        </div>
       </div>
     </div>
   );
