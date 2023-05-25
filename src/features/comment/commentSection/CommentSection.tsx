@@ -1,6 +1,6 @@
 import { VotingState } from "../../../model/VotingState";
 import CommentInput from "../commentInput/CommentInput";
-import CommentList from "../commentList/CommentList";
+import CommentCardList from "../commentCardList/CommentCardList";
 import { ICommentSectionProps } from "./ICommentSectionProps";
 
 const CommentSection: React.FC<ICommentSectionProps> = (props) => {
@@ -16,7 +16,7 @@ const CommentSection: React.FC<ICommentSectionProps> = (props) => {
   return (
     <div className={props.className}>
       <CommentInput hint={props.name} onAdd={onAdd} />
-      <CommentList
+      <CommentCardList
         comments={props.dataObject.dataObjects}
         commentType={props.commentType}
         onDelete={props.dataObject.onDelete}
