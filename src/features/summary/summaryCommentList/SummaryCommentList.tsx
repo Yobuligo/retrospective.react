@@ -6,8 +6,8 @@ export const SummaryCommentList: React.FC<ISummaryCommentListProps> = (
   props
 ) => {
   const items = props.comments.map((comment) => (
-    <div className={styles.summaryCommentListComment}>
-      <SummaryComment key={comment.id} comment={comment} />
+    <div key={comment.id} className={styles.summaryCommentListComment}>
+      <SummaryComment comment={comment} />
     </div>
   ));
   return <div className={styles.summaryCommentList}>{items}</div>;
