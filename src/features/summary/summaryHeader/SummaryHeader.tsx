@@ -1,4 +1,5 @@
 import { CommentType } from "../../../types/CommentType";
+import { style } from "../../../utils/Styles";
 import { ISummaryHeaderProps } from "./ISummaryHeaderProps";
 import styles from "./SummaryHeader.module.css";
 
@@ -20,7 +21,7 @@ export const SummaryHeader: React.FC<ISummaryHeaderProps> = (props) => {
   };
 
   return (
-    <div className={backgroundColor()}>
+    <div className={style(styles.summaryHeader, backgroundColor())}>
       <h3>{props.title}</h3>
     </div>
   );
