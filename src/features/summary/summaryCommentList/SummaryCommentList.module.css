@@ -1,0 +1,9 @@
+.summaryCommentList {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryCommentListComment {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
