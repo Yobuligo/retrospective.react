@@ -11,6 +11,7 @@
 
 .languageSelection select {
   font-size: medium;
+  width: 4rem;
 }
 
 .languageSelectionText {

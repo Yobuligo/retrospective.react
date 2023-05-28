@@ -19,5 +19,9 @@ export const SummaryHeader: React.FC<ISummaryHeaderProps> = (props) => {
     }
   };
 
-  return <div className={backgroundColor()}>{props.title}</div>;
+  return (
+    <div className={backgroundColor()}>
+      <h3>{props.title}</h3>
+    </div>
+  );
 };
