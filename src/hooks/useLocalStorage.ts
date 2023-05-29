@@ -14,7 +14,7 @@ export const useLocalStorage = <T>(
   }, [key]);
 
   const updateValue = useCallback(
-    () => (newValue: T) => {
+    (newValue: T) => {
       setValue(newValue);
       localStorage.setItem(key, JSON.stringify(newValue));
     },

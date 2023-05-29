@@ -7,13 +7,12 @@ export const useDataAccessObject = <T>(
   const [dataObjects, setDataObjects] = useState<T[]>(initialDataObjects ?? []);
 
   const onAdd = useCallback(
-    () => (dataObject: T) =>
-      setDataObjects((previous) => [...previous, dataObject]),
+    (dataObject: T) => setDataObjects((previous) => [...previous, dataObject]),
     []
   );
 
   const onDelete = useCallback(
-    () => (dataObject: T) =>
+    (dataObject: T) =>
       setDataObjects((previous) => {
         const index = previous.findIndex((element) => element === dataObject);
         previous.splice(index, 1);
@@ -23,7 +22,7 @@ export const useDataAccessObject = <T>(
   );
 
   const onUpdate = useCallback(
-    () => (dataObject: T) =>
+    (dataObject: T) =>
       setDataObjects((previous) => {
         const index = previous.findIndex((element) => element === dataObject);
         previous.splice(index, 1, dataObject);
