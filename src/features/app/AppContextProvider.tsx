@@ -5,9 +5,9 @@ import { useStateToValue } from "../../hooks/useStateToValue";
 import { IComment } from "../../model/IComment";
 import { VotingState } from "../../model/VotingState";
 import { LanguageType } from "../../types/LanguageType";
-import { IAppContextFrameProps } from "./IAppContextFrameProps";
+import { IAppContextProviderProps } from "./IAppContextProviderProps";
 
-const AppContextFrame: React.FC<IAppContextFrameProps> = (props) => {
+const AppContextProvider: React.FC<IAppContextProviderProps> = (props) => {
   return (
     <AppContext.Provider
       value={{
@@ -50,4 +50,4 @@ const AppContextFrame: React.FC<IAppContextFrameProps> = (props) => {
   );
 };
 
-export default AppContextFrame;
+export default AppContextProvider;
