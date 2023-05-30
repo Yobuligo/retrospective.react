@@ -1,11 +1,11 @@
+import { AppContext } from "../../data/AppContext";
 import { useDataAccessObject } from "../../hooks/useDataAccessObject";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useStateToValue } from "../../hooks/useStateToValue";
 import { IComment } from "../../model/IComment";
-import { LanguageType } from "../../types/LanguageType";
-import { AppContext } from "../../data/AppContext";
-import { IAppContextFrameProps } from "./IAppContextFrameProps";
 import { VotingState } from "../../model/VotingState";
+import { LanguageType } from "../../types/LanguageType";
+import { IAppContextFrameProps } from "./IAppContextFrameProps";
 
 const AppContextFrame: React.FC<IAppContextFrameProps> = (props) => {
   return (
@@ -40,7 +40,9 @@ const AppContextFrame: React.FC<IAppContextFrameProps> = (props) => {
             },
           ]),
         },
-        language: useStateToValue(useLocalStorage("language", LanguageType.en)),
+        language: useStateToValue<LanguageType>(
+          useLocalStorage<LanguageType>("language", LanguageType.en)
+        ),
       }}
     >
       {props.children}
