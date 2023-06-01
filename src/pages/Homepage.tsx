@@ -1,7 +1,7 @@
 import Board from "../features/board/board/Board";
 
-const Homepage: React.FC = () => {
+const HomePage: React.FC = () => {
   return <Board />;
 };
 
-export default Homepage;
+export default HomePage;
