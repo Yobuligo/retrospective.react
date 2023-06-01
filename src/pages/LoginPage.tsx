@@ -1,5 +1,7 @@
-import { LoginSection } from "../features/login/loginSection/LoginSection";
+import { Login } from "../features/login/main/Login";
 
-export const LoginPage: React.FC = () => {
-  return <LoginSection />;
+const LoginPage: React.FC = () => {
+  return <Login />;
 };
+
+export default LoginPage;

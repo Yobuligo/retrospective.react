@@ -1,12 +1,12 @@
-.loginSectionLabelInput {
+.loginLabelInput {
   display: flex;
   flex-direction: column;
 }
 
-.loginSectionLabelInput input {
+.loginLabelInput input {
   width: 15rem;
 }
 
-.loginSectionButton {
+.loginButton {
   font-size: xx-large;
 }

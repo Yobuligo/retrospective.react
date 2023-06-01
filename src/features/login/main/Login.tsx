@@ -1,9 +1,9 @@
 import { useId, useRef } from "react";
 import { useTranslation } from "../../../hooks/useTranslation";
-import { ILoginSectionProps } from "./ILoginSectionProps";
-import styles from "./LoginSection.module.css";
+import { ILoginProps } from "./ILoginProps";
+import styles from "./Login.module.css";
 
-export const LoginSection: React.FC<ILoginSectionProps> = (props) => {
+export const Login: React.FC<ILoginProps> = (props) => {
   const { t } = useTranslation();
   const usernameId = useId();
   const passwordId = useId();
@@ -22,15 +22,15 @@ export const LoginSection: React.FC<ILoginSectionProps> = (props) => {
   return (
     <>
       <form action="submit" onSubmit={onSubmit}>
-        <div className={styles.loginSectionLabelInput}>
+        <div className={styles.loginLabelInput}>
           <label htmlFor={usernameId}>{t.username}</label>
           <input type="text" id={usernameId} ref={username} />
         </div>
-        <div className={styles.loginSectionLabelInput}>
+        <div className={styles.loginLabelInput}>
           <label htmlFor={passwordId}>{t.password}</label>
           <input type="password" id={passwordId} ref={password} />
         </div>
-        <div className={styles.loginSectionButton}>
+        <div className={styles.loginButton}>
           <button>{t.login}</button>
         </div>
       </form>
