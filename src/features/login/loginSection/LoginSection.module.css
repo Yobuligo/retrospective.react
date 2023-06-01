@@ -1,0 +1,8 @@
+.loginSectionLabelInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginSectionLabelInput input {
+  width: 15rem;
+}

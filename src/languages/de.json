@@ -8,5 +8,8 @@
     "titleNegative": "Was lief schlecht",
     "titleProposal": "Verbesserungsvorschlag",
     "title": "Standard",
-    "language": "Sprache"
+    "language": "Sprache",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "login": "Login"
 }
