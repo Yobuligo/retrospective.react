@@ -19,8 +19,8 @@ const CommentSection: React.FC<ICommentSectionProps> = (props) => {
       <CommentInput hint={props.name} onAdd={onAdd} />
       <div className={styles.commentSectionList}>
         <CommentCardList
-          comments={props.dataObject.dataObjects}
-          commentType={props.commentType}
+          notes={props.dataObject.dataObjects}
+          noteType={props.noteType}
           onDelete={props.dataObject.onDelete}
         />
       </div>

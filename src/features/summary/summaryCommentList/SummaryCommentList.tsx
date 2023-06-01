@@ -5,9 +5,9 @@ import styles from "./SummaryCommentList.module.css";
 export const SummaryCommentList: React.FC<ISummaryCommentListProps> = (
   props
 ) => {
-  const items = props.comments.map((comment) => (
+  const items = props.notes.map((comment) => (
     <div key={comment.id} className={styles.summaryCommentListComment}>
-      <SummaryComment comment={comment} />
+      <SummaryComment note={comment} />
     </div>
   ));
   return <div className={styles.summaryCommentList}>{items}</div>;

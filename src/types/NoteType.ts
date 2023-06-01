@@ -1,4 +1,4 @@
-export enum CommentType {
+export enum NoteType {
   Positive,
   Negative,
   Proposal,

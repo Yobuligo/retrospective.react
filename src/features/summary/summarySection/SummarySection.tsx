@@ -6,8 +6,8 @@ import { ISummarySectionProps } from "./ISummarySectionProps";
 export const SummarySection: React.FC<ISummarySectionProps> = (props) => {
   return (
     <Card>
-      <SummaryHeader commentType={props.commentType} title={props.title} />
-      <SummaryCommentList comments={props.comments} />
+      <SummaryHeader noteType={props.noteType} title={props.title} />
+      <SummaryCommentList notes={props.notes} />
     </Card>
   );
 };

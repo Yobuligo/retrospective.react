@@ -3,11 +3,11 @@ import { ICommentCardListProps } from "./ICommentCardListProps";
 import styles from "./CommentCardList.module.css";
 
 const CommentCardList: React.FC<ICommentCardListProps> = (props) => {
-  const items = props.comments.map((comment) => (
+  const items = props.notes.map((comment) => (
     <div key={comment.id} className={styles.commentCardListItem}>
       <CommentCard
-        comment={comment}
-        commentType={props.commentType}
+        note={comment}
+        noteType={props.noteType}
         onDelete={props.onDelete}
       />
     </div>

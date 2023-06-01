@@ -1,5 +1,5 @@
-import { CommentType } from "./../../../types/CommentType";
+import { NoteType } from "../../../types/NoteType";
 export interface ISummaryHeaderProps {
-  commentType: CommentType;
+  noteType: NoteType;
   title: string;
 }

@@ -1,4 +1,4 @@
-import { CommentType } from "../../../types/CommentType";
+import { NoteType } from "../../../types/NoteType";
 import { style } from "../../../utils/Styles";
 import VotingSection from "../../voting/votingSection/VotingSection";
 import CommentDelete from "../commentDelete/CommentDelete";
@@ -8,12 +8,12 @@ import { ICommentFooterProps } from "./ICommentFooterProps";
 
 const CommentFooter: React.FC<ICommentFooterProps> = (props) => {
   const backgroundColor = () => {
-    switch (props.commentType) {
-      case CommentType.Negative: {
+    switch (props.noteType) {
+      case NoteType.Negative: {
         return styles.negative;
       }
 
-      case CommentType.Proposal: {
+      case NoteType.Proposal: {
         return styles.proposal;
       }
 
@@ -25,10 +25,10 @@ const CommentFooter: React.FC<ICommentFooterProps> = (props) => {
 
   return (
     <div className={style(styles.commentFooter, backgroundColor())}>
-      <VotingSection comment={props.comment} />
+      <VotingSection note={props.note} />
       <div className={styles.commentFooterDivider}>
-        <CommentEdit onEdit={() => props.onEdit(props.comment)} />
-        <CommentDelete onDelete={() => props.onDelete(props.comment)} />
+        <CommentEdit onEdit={() => props.onEdit(props.note)} />
+        <CommentDelete onDelete={() => props.onDelete(props.note)} />
       </div>
     </div>
   );

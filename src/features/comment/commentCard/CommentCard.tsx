@@ -6,11 +6,11 @@ import styles from "./CommentCard.module.css";
 import { ICommentCardProps } from "./ICommentCardProps";
 
 const CommentCard: React.FC<ICommentCardProps> = (props) => {
-  const [comment, setComment] = useState(props.comment.text);
+  const [comment, setComment] = useState(props.note.text);
   const [enabled, toggleEnabled] = useToggle(false);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    props.comment.text = event.target.value;
+    props.note.text = event.target.value;
     setComment(event.target.value);
   };
 
@@ -29,8 +29,8 @@ const CommentCard: React.FC<ICommentCardProps> = (props) => {
         </span>
       </div>
       <CommentFooter
-        comment={props.comment}
-        commentType={props.commentType}
+        note={props.note}
+        noteType={props.noteType}
         onDelete={props.onDelete}
         onEdit={toggle}
       />

@@ -1,11 +1,11 @@
-import { IComment } from "../../../model/IComment";
-import { CommentType } from "../../../types/CommentType";
-import { IHaveOnDeleteComment } from "../../types/IHaveOnDeleteComment";
-import { IHaveOnEditComment } from "../../types/IHaveOnEditComment";
+import { INote } from "../../../model/INote";
+import { NoteType } from "../../../types/NoteType";
+import { IHaveOnDeleteNote } from "../../types/IHaveOnDeleteNote";
+import { IHaveOnEditNote } from "../../types/IHaveOnEditNote";
 
 export interface ICommentFooterProps
-  extends IHaveOnDeleteComment,
-    IHaveOnEditComment {
-  comment: IComment;
-  commentType: CommentType;
+  extends IHaveOnDeleteNote,
+    IHaveOnEditNote {
+  note: INote;
+  noteType: NoteType;
 }

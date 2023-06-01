@@ -6,7 +6,7 @@ const BoardSection: React.FC<IBoardSection> = (props) => {
     <>
       <CommentSection
         className={props.className}
-        commentType={props.commentType}
+        noteType={props.noteType}
         dataObject={props.dataObject}
         name={props.name}
       />

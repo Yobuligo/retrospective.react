@@ -1,9 +1,10 @@
-import { IComment } from "../../../model/IComment";
-import { CommentType } from "../../../types/CommentType";
+import { INote } from "../../../model/INote";
+import { NoteType } from "../../../types/NoteType";
 import { IDataAccessObject } from "../../../types/IDataAccessObject";
+
 export interface IBoardSection {
   className?: string
-  commentType: CommentType;
-  dataObject: IDataAccessObject<IComment>;
+  noteType: NoteType;
+  dataObject: IDataAccessObject<INote>;
   name: string;
 }

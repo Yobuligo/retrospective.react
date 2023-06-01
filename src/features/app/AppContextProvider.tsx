@@ -2,7 +2,7 @@ import { AppContext } from "../../data/AppContext";
 import { useDataAccessObject } from "../../hooks/useDataAccessObject";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useStateToValue } from "../../hooks/useStateToValue";
-import { IComment } from "../../model/IComment";
+import { INote } from "../../model/INote";
 import { LanguageType } from "../../types/LanguageType";
 import { IAppContextProviderProps } from "./IAppContextProviderProps";
 
@@ -11,9 +11,9 @@ const AppContextProvider: React.FC<IAppContextProviderProps> = (props) => {
     <AppContext.Provider
       value={{
         comments: {
-          negativeDAO: useDataAccessObject<IComment>(),
-          positiveDAO: useDataAccessObject<IComment>(),
-          proposalDAO: useDataAccessObject<IComment>(),
+          negativeDAO: useDataAccessObject<INote>(),
+          positiveDAO: useDataAccessObject<INote>(),
+          proposalDAO: useDataAccessObject<INote>(),
         },
         language: useStateToValue<LanguageType>(
           useLocalStorage<LanguageType>("language", LanguageType.en)

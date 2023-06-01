@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../../../data/AppContext";
 import { useTranslation } from "../../../hooks/useTranslation";
-import { CommentType } from "../../../types/CommentType";
+import { NoteType } from "../../../types/NoteType";
 import BoardSection from "../boardSection/BoardSection";
 import BoardTitle from "../boardTitle/BoardTitle";
 import styles from "./Board.module.css";
@@ -17,21 +17,21 @@ const Board: React.FC = () => {
       <div className={styles.boardSections}>
         <div className={styles.boardSection}>
           <BoardSection
-            commentType={CommentType.Positive}
+            noteType={NoteType.Positive}
             dataObject={context.comments.positiveDAO}
             name={t.titlePositive}
           />
         </div>
         <div className={styles.boardSection}>
           <BoardSection
-            commentType={CommentType.Negative}
+            noteType={NoteType.Negative}
             dataObject={context.comments.negativeDAO}
             name={t.titleNegative}
           />
         </div>
         <div className={styles.boardSection}>
           <BoardSection
-            commentType={CommentType.Proposal}
+            noteType={NoteType.Proposal}
             dataObject={context.comments.proposalDAO}
             name={t.titleProposal}
           />

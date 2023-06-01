@@ -5,12 +5,12 @@ export const SummaryComment: React.FC<ISummaryCommentProps> = (props) => {
   return (
     <div className={styles.summaryComment}>
       <div className={styles.summaryCommentPositive}>
-        {props.comment.countAgrees}
+        {props.note.countAgrees}
       </div>
       <div className={styles.summaryCommentNegative}>
-        {props.comment.countDisagrees}
+        {props.note.countDisagrees}
       </div>
-      <div>{props.comment.text}</div>
+      <div>{props.note.text}</div>
     </div>
   );
 };

@@ -1,8 +1,8 @@
-import { IComment } from "../../../model/IComment";
-import { CommentType } from "../../../types/CommentType";
-import { IHaveOnDeleteComment } from "../../types/IHaveOnDeleteComment";
+import { INote } from "../../../model/INote";
+import { NoteType } from "../../../types/NoteType";
+import { IHaveOnDeleteNote } from "../../types/IHaveOnDeleteNote";
 
-export interface ICommentCardProps extends IHaveOnDeleteComment {
-  comment: IComment;
-  commentType: CommentType;
+export interface ICommentCardProps extends IHaveOnDeleteNote {
+  note: INote;
+  noteType: NoteType;
 }

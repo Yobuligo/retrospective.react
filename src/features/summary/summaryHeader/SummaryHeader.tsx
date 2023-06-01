@@ -1,16 +1,16 @@
-import { CommentType } from "../../../types/CommentType";
+import { NoteType } from "../../../types/NoteType";
 import { style } from "../../../utils/Styles";
 import { ISummaryHeaderProps } from "./ISummaryHeaderProps";
 import styles from "./SummaryHeader.module.css";
 
 export const SummaryHeader: React.FC<ISummaryHeaderProps> = (props) => {
   const backgroundColor = () => {
-    switch (props.commentType) {
-      case CommentType.Negative: {
+    switch (props.noteType) {
+      case NoteType.Negative: {
         return styles.summaryHeaderNegative;
       }
 
-      case CommentType.Proposal: {
+      case NoteType.Proposal: {
         return styles.summaryHeaderProposal;
       }
 

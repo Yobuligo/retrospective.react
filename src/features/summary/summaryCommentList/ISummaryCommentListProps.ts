@@ -1,5 +1,5 @@
-import { IComment } from "../../../model/IComment";
+import { INote } from "../../../model/INote";
 
 export interface ISummaryCommentListProps {
-  comments: IComment[];
+  notes: INote[];
 }

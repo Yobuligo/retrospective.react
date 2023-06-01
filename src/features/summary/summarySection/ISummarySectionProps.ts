@@ -1,8 +1,8 @@
-import { IComment } from "../../../model/IComment";
-import { CommentType } from "./../../../types/CommentType";
+import { INote } from "../../../model/INote";
+import { NoteType } from "../../../types/NoteType";
 
 export interface ISummarySectionProps {
-  comments: IComment[];
-  commentType: CommentType;
+  notes: INote[];
+  noteType: NoteType;
   title: string;
 }
