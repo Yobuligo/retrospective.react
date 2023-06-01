@@ -6,3 +6,7 @@
 .loginSectionLabelInput input {
   width: 15rem;
 }
+
+.loginSectionButton {
+  font-size: xx-large;
+}
