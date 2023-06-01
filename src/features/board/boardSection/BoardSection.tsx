@@ -1,4 +1,4 @@
-import CommentSection from "../../comment/commentSection/CommentSection";
+import CommentSection from "../../note/noteSection/CommentSection";
 import { IBoardSection } from "./IBoardSectionProps";
 
 const BoardSection: React.FC<IBoardSection> = (props) => {

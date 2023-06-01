@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "../../../components/card/Card";
 import { useToggle } from "../../../hooks/useToggle";
-import CommentFooter from "../commentFooter/CommentFooter";
+import CommentFooter from "../noteFooter/CommentFooter";
 import styles from "./CommentCard.module.css";
 import { ICommentCardProps } from "./ICommentCardProps";
 

@@ -1,6 +1,6 @@
 import { VotingState } from "../../../model/VotingState";
-import CommentInput from "../commentInput/CommentInput";
-import CommentCardList from "../commentCardList/CommentCardList";
+import CommentInput from "../noteInput/CommentInput";
+import CommentCardList from "../noteCardList/CommentCardList";
 import { ICommentSectionProps } from "./ICommentSectionProps";
 import styles from './CommentSection.module.css'
 

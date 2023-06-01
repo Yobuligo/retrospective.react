@@ -1,4 +1,4 @@
-import CommentCard from "../commentCard/CommentCard";
+import CommentCard from "../noteCard/CommentCard";
 import { ICommentCardListProps } from "./ICommentCardListProps";
 import styles from "./CommentCardList.module.css";
 

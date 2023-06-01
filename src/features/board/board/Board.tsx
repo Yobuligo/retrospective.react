@@ -9,6 +9,7 @@ import styles from "./Board.module.css";
 const Board: React.FC = () => {
   const { t } = useTranslation();
   const context = useContext(AppContext);
+  
   return (
     <div className={styles.board}>
       <div className={styles.boardTitle}>

@@ -1,8 +1,8 @@
 import { NoteType } from "../../../types/NoteType";
 import { style } from "../../../utils/Styles";
 import VotingSection from "../../voting/votingSection/VotingSection";
-import CommentDelete from "../commentDelete/CommentDelete";
-import CommentEdit from "../commentEdit/CommentEdit";
+import CommentDelete from "../noteDelete/CommentDelete";
+import CommentEdit from "../noteEdit/CommentEdit";
 import styles from "./CommentFooter.module.css";
 import { ICommentFooterProps } from "./ICommentFooterProps";
 
