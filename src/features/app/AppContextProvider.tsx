@@ -1,4 +1,4 @@
-import { AppContext } from "../../data/AppContext";
+import { AppContext } from "../../context/AppContext";
 import { useDataAccessObject } from "../../hooks/useDataAccessObject";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useStateToValue } from "../../hooks/useStateToValue";
