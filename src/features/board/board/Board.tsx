@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppContext } from "../../../context/AppContext";
+import { AppContext } from "../../../contexts/AppContext";
 import { useTranslation } from "../../../hooks/useTranslation";
 import { NoteType } from "../../../types/NoteType";
 import BoardSection from "../boardSection/BoardSection";

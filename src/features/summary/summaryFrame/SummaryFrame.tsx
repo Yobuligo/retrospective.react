@@ -3,7 +3,7 @@ import { useTranslation } from "../../../hooks/useTranslation";
 import { NoteType } from "../../../types/NoteType";
 import { SummarySection } from "../summarySection/SummarySection";
 import styles from "./SummaryFrame.module.css";
-import { AppContext } from "../../../context/AppContext";
+import { AppContext } from "../../../contexts/AppContext";
 
 export const SummaryFrame: React.FC = () => {
   const { t } = useTranslation();
