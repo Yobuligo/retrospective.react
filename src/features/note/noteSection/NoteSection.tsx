@@ -1,4 +1,4 @@
-import { VotingState } from "../../../model/VotingState";
+import { VotingState } from "../../../types/VotingState";
 import NoteInput from "../noteInput/NoteInput";
 import NoteCardList from "../noteCardList/NoteCardList";
 import { INoteSectionProps } from "./INoteSectionProps";

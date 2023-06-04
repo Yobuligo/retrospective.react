@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { VotingState } from "../../../model/VotingState";
+import { VotingState } from "../../../types/VotingState";
 import AgreeButton from "../votingButton/agreeButton/AgreeButton";
 import DisagreeButton from "../votingButton/disagreeButton/DisagreeButton";
 import { IVotingSectionProps } from "./IVotingSectionProps";

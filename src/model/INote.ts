@@ -1,5 +1,5 @@
 import { IHaveId } from "../types/IHaveId";
-import { VotingState } from "./VotingState";
+import { VotingState } from "../types/VotingState";
 
 export interface INote extends IHaveId {
   countAgrees: number;
