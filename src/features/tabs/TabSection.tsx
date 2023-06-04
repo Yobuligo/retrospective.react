@@ -1,6 +1,7 @@
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import { Suspense, lazy, useState } from "react";
+import { useParams } from "react-router-dom";
 import { useTranslation } from "../../hooks/useTranslation";
 
 const Board = lazy(() => import("../board/board/Board"));
@@ -9,6 +10,7 @@ const SummaryPage = lazy(() => import("../../pages/SummaryPage"));
 export const TabSection: React.FC = () => {
   const { t } = useTranslation();
   const [page, setPage] = useState(0);
+  const params = useParams<{ boardId: string }>();
 
   const content = () => {
     switch (page) {
