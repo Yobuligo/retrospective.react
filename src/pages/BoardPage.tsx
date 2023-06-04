@@ -1,7 +1,16 @@
-import Board from "../features/board/board/Board";
+import { LanguageSelection } from "../features/language/LanguageSelection";
+import { TabSection } from "../features/tabs/TabSection";
+import styles from "./BoardPage.module.css";
 
 const BoardPage: React.FC = () => {
-  return <Board />;
+  return (
+    <>
+      <div className={styles.appLanguageSelection}>
+        <LanguageSelection />
+      </div>
+      <TabSection />
+    </>
+  );
 };
 
 export default BoardPage;

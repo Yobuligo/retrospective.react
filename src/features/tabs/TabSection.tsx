@@ -3,7 +3,7 @@ import Tabs from "@mui/material/Tabs";
 import { Suspense, lazy, useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
 
-const BoardPage = lazy(() => import("../../pages/BoardPage"));
+const Board = lazy(() => import("../board/board/Board"));
 const SummaryPage = lazy(() => import("../../pages/SummaryPage"));
 
 export const TabSection: React.FC = () => {
@@ -15,7 +15,7 @@ export const TabSection: React.FC = () => {
       case 0: {
         return (
           <Suspense fallback={<p>...Loading</p>}>
-            <BoardPage />
+            <Board />
           </Suspense>
         );
       }
