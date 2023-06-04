@@ -3,7 +3,7 @@ import Tabs from "@mui/material/Tabs";
 import { Suspense, lazy, useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
 
-const HomePage = lazy(() => import("../../pages/Homepage"));
+const HomePage = lazy(() => import("../../pages/HomePage"));
 const SummaryPage = lazy(() => import("../../pages/SummaryPage"));
 
 export const TabSection: React.FC = () => {

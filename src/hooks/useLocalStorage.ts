@@ -1,17 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
+import { useReadLocalStorage } from "./useReadLocalStorage";
 
 export const useLocalStorage = <T>(
   key: string,
-  initialValue: T
+  fallback: T
 ): [value: T, setValue: (newValue: T) => void] => {
-  const [value, setValue] = useState(initialValue);
-
-  useEffect(() => {
-    const item = localStorage.getItem(key);
-    if (item) {
-      setValue(JSON.parse(item));
-    }
-  }, [key]);
+  const [value, setValue] = useState(useReadLocalStorage(key) ?? fallback);
 
   const updateValue = useCallback(
     (newValue: T) => {
