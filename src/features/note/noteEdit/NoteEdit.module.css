@@ -1,11 +1,11 @@
-.commentEdit {
+.noteEdit {
 }
 
-.commentEdit button {
+.noteEdit button {
   background-color: transparent;
   border: 0px;
 }
 
-.commentEdit button:hover {
+.noteEdit button:hover {
   background-color: rgba(211, 211, 211, 0.7);
 }

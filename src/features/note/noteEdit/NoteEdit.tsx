@@ -1,11 +1,11 @@
 import Icon from "../../../components/icon/Icon";
 import { IconType } from "../../../components/icon/IconType";
-import styles from "./CommentEdit.module.css";
-import { ICommentEditProps } from "./ICommentEditProps";
+import styles from "./NoteEdit.module.css";
+import { INoteEditProps } from "./INoteEditProps";
 
-const CommentEdit: React.FC<ICommentEditProps> = (props) => {
+const NoteEdit: React.FC<INoteEditProps> = (props) => {
   return (
-    <div className={styles.commentEdit}>
+    <div className={styles.noteEdit}>
       <button onClick={props.onEdit}>
         <Icon icon={IconType.Edit} />
       </button>
@@ -13,4 +13,4 @@ const CommentEdit: React.FC<ICommentEditProps> = (props) => {
   );
 };
 
-export default CommentEdit;
+export default NoteEdit;

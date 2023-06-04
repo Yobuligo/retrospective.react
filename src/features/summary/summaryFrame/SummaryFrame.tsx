@@ -13,21 +13,21 @@ export const SummaryFrame: React.FC = () => {
     <>
       <div className={styles.summaryFrameHeader}>
         <SummarySection
-          notes={context.comments.positiveDAO.dataObjects}
+          notes={context.notes.positiveDAO.dataObjects}
           noteType={NoteType.Positive}
           title={t.titlePositive}
         />
       </div>
       <div className={styles.summaryFrameHeader}>
         <SummarySection
-          notes={context.comments.negativeDAO.dataObjects}
+          notes={context.notes.negativeDAO.dataObjects}
           noteType={NoteType.Negative}
           title={t.titleNegative}
         />
       </div>
       <div className={styles.summaryFrameHeader}>
         <SummarySection
-          notes={context.comments.proposalDAO.dataObjects}
+          notes={context.notes.proposalDAO.dataObjects}
           noteType={NoteType.Proposal}
           title={t.titleProposal}
         />

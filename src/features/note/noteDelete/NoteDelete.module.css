@@ -1,12 +1,12 @@
-.commentDelete{
+.noteDelete{
     margin-right: 1rem;
 }
 
-.commentDelete button{
+.noteDelete button{
     background-color: transparent;
     border: 0px;
 }
 
-.commentDelete button:hover{
+.noteDelete button:hover{
     background-color: rgba(211, 211, 211, 0.7);
 }

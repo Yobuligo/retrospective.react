@@ -4,7 +4,7 @@ import { IValue } from "../types/IValue";
 import { LanguageType } from "../types/LanguageType";
 
 export type IAppContext = {
-  comments: {
+  notes: {
     negativeDAO: IDataAccessObject<INote>;
     positiveDAO: IDataAccessObject<INote>;
     proposalDAO: IDataAccessObject<INote>;

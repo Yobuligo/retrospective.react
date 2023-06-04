@@ -2,36 +2,36 @@ import { useEffect, useState } from "react";
 import Icon from "../../../components/icon/Icon";
 import { IconType } from "../../../components/icon/IconType";
 import Input from "../../../components/input/Input";
-import styles from "./CommentInput.module.css";
-import { ICommentInputProps } from "./ICommentInputProps";
+import styles from "./NoteInput.module.css";
+import { INoteInputProps } from "./INoteInputProps";
 
-const CommentInput: React.FC<ICommentInputProps> = (props) => {
-  const [comment, setComment] = useState<string>("");
+const NoteInput: React.FC<INoteInputProps> = (props) => {
+  const [note, setNote] = useState<string>("");
   const [disableAddButton, setDisableAddButton] = useState(false);
 
   useEffect(() => {
-    setDisableAddButton(comment === "");
-  }, [comment]);
+    setDisableAddButton(note === "");
+  }, [note]);
 
-  const clearComment = () => {
-    setComment("");
+  const clearNote = () => {
+    setNote("");
   };
 
   const onAdd = () => {
-    if (comment !== "") {
-      props.onAdd?.(comment);
-      clearComment();
+    if (note !== "") {
+      props.onAdd?.(note);
+      clearNote();
     }
   };
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setComment(event.target.value);
+    setNote(event.target.value);
 
   return (
     <div className={styles.topic}>
       <Input
         type="text"
-        value={comment}
+        value={note}
         placeholder={props.hint}
         onChange={onChange}
         onEnter={onAdd}
@@ -43,4 +43,4 @@ const CommentInput: React.FC<ICommentInputProps> = (props) => {
   );
 };
 
-export default CommentInput;
+export default NoteInput;

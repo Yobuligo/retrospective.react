@@ -1,5 +1,5 @@
 import { INote } from "../../../model/INote";
 
-export interface ISummaryCommentProps {
+export interface ISummaryNoteProps {
   note: INote;
 }

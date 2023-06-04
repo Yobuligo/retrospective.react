@@ -1,10 +1,10 @@
 import { VotingState } from "../../../model/VotingState";
-import CommentInput from "../noteInput/CommentInput";
-import CommentCardList from "../noteCardList/CommentCardList";
-import { ICommentSectionProps } from "./ICommentSectionProps";
-import styles from './CommentSection.module.css'
+import NoteInput from "../noteInput/NoteInput";
+import NoteCardList from "../noteCardList/NoteCardList";
+import { INoteSectionProps } from "./INoteSectionProps";
+import styles from './NoteSection.module.css'
 
-const CommentSection: React.FC<ICommentSectionProps> = (props) => {
+const NoteSection: React.FC<INoteSectionProps> = (props) => {
   const onAdd = (text: string): void =>
     props.dataObject.onAdd({
       id: crypto.randomUUID(),
@@ -16,9 +16,9 @@ const CommentSection: React.FC<ICommentSectionProps> = (props) => {
 
   return (
     <div className={props.className}>
-      <CommentInput hint={props.name} onAdd={onAdd} />
-      <div className={styles.commentSectionList}>
-        <CommentCardList
+      <NoteInput hint={props.name} onAdd={onAdd} />
+      <div className={styles.noteSectionList}>
+        <NoteCardList
           notes={props.dataObject.dataObjects}
           noteType={props.noteType}
           onDelete={props.dataObject.onDelete}
@@ -28,4 +28,4 @@ const CommentSection: React.FC<ICommentSectionProps> = (props) => {
   );
 };
 
-export default CommentSection;
+export default NoteSection;

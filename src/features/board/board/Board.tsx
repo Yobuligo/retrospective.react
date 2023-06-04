@@ -19,21 +19,21 @@ const Board: React.FC = () => {
         <div className={styles.boardSection}>
           <BoardSection
             noteType={NoteType.Positive}
-            dataObject={context.comments.positiveDAO}
+            dataObject={context.notes.positiveDAO}
             name={t.titlePositive}
           />
         </div>
         <div className={styles.boardSection}>
           <BoardSection
             noteType={NoteType.Negative}
-            dataObject={context.comments.negativeDAO}
+            dataObject={context.notes.negativeDAO}
             name={t.titleNegative}
           />
         </div>
         <div className={styles.boardSection}>
           <BoardSection
             noteType={NoteType.Proposal}
-            dataObject={context.comments.proposalDAO}
+            dataObject={context.notes.proposalDAO}
             name={t.titleProposal}
           />
         </div>

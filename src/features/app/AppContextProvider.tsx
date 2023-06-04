@@ -10,7 +10,7 @@ const AppContextProvider: React.FC<IAppContextProviderProps> = (props) => {
   return (
     <AppContext.Provider
       value={{
-        comments: {
+        notes: {
           negativeDAO: useDataAccessObject<INote>(),
           positiveDAO: useDataAccessObject<INote>(),
           proposalDAO: useDataAccessObject<INote>(),
