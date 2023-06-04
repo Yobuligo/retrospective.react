@@ -11,5 +11,6 @@
     "language": "Language",
     "username": "Username",
     "password": "Password",
-    "login": "Login"
+    "login": "Login",
+    "addBoard": "Add Board"
 }
