@@ -1,4 +1,4 @@
-import * as translations from "../languages";
+import * as translations from "../i18n";
 import { LanguageType } from "../types/LanguageType";
 import { useLanguage } from "./useLanguage";
 
