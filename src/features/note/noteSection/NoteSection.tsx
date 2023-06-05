@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Note } from "../../../api/Note";
 import { VotingState } from "../../../types/VotingState";
 import NoteCardList from "../noteCardList/NoteCardList";
@@ -6,8 +7,11 @@ import { INoteSectionProps } from "./INoteSectionProps";
 import styles from "./NoteSection.module.css";
 
 const NoteSection: React.FC<INoteSectionProps> = (props) => {
-  const onAdd = (text: string) => {
-    const note = Note.create({
+  const [showLoadingSpinner, setShowLoadingSpinner] = useState(false);
+
+  const onAdd = async (text: string) => {
+    setShowLoadingSpinner(true);
+    const note = await Note.create({
       countAgrees: 0,
       countDisagrees: 0,
       votingState: VotingState.Open,
@@ -15,11 +19,16 @@ const NoteSection: React.FC<INoteSectionProps> = (props) => {
     });
 
     props.dataObject.onAdd(note);
+    setShowLoadingSpinner(false);
   };
 
   return (
     <div className={props.className}>
-      <NoteInput hint={props.name} onAdd={onAdd} />
+      <NoteInput
+        hint={props.name}
+        onAdd={onAdd}
+        showLoadingSpinner={showLoadingSpinner}
+      />
       <div className={styles.noteSectionList}>
         <NoteCardList
           notes={props.dataObject.dataObjects}

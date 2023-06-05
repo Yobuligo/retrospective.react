@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Icon from "../../../components/icon/Icon";
 import { IconType } from "../../../components/icon/IconType";
 import Input from "../../../components/input/Input";
-import styles from "./NoteInput.module.css";
+import { LoadingSpinner } from "../../../components/loadingSpinner/LoadingSpinner";
 import { INoteInputProps } from "./INoteInputProps";
+import styles from "./NoteInput.module.css";
 
 const NoteInput: React.FC<INoteInputProps> = (props) => {
   const [note, setNote] = useState<string>("");
@@ -37,7 +38,11 @@ const NoteInput: React.FC<INoteInputProps> = (props) => {
         onEnter={onAdd}
       />
       <button disabled={disableAddButton} onClick={onAdd}>
-        <Icon icon={IconType.Add} />
+        {props.showLoadingSpinner ? (
+          <LoadingSpinner />
+        ) : (
+          <Icon icon={IconType.Add} />
+        )}
       </button>
     </div>
   );
