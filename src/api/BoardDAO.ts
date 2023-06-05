@@ -2,8 +2,8 @@ import { IBoard } from "../model/IBoard";
 import { INote } from "../model/INote";
 import { DataAccessObject } from "../utils/DataAccessObject/DataAccessObject";
 
-class BoardDAO extends DataAccessObject<IBoard> {
-  addNote(boardId: string, note: Omit<INote, "id">): Promise<INote> {
+export class BoardDAO extends DataAccessObject<IBoard> {
+  static addNote(boardId: string, note: Omit<INote, "id">): Promise<INote> {
     return new Promise((resolve) => {
       const newNote = { id: crypto.randomUUID(), ...note };
       const item = localStorage.getItem(boardId);
@@ -16,6 +16,15 @@ class BoardDAO extends DataAccessObject<IBoard> {
       resolve(newNote);
     });
   }
-}
 
-export const Board = new BoardDAO();
+  static findNotes(boardId: string): Promise<INote[]> {
+    return new Promise((resolve) => {
+      const item = localStorage.getItem(boardId);
+      if (item) {
+        resolve(JSON.parse(item));
+      } else {
+        resolve([]);
+      }
+    });
+  }
+}

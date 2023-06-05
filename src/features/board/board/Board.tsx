@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../../../contexts/AppContext";
 import { useTranslation } from "../../../hooks/useTranslation";
 import { NoteType } from "../../../types/NoteType";
@@ -9,7 +9,14 @@ import styles from "./Board.module.css";
 const Board: React.FC = () => {
   const { t } = useTranslation();
   const context = useContext(AppContext);
-  
+
+  useEffect(() => {
+    async function fetchNotes() {
+    }
+
+    fetchNotes();
+  }, []);
+
   return (
     <div className={styles.board}>
       <div className={styles.boardTitle}>
