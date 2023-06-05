@@ -1,5 +1,7 @@
 import { useContext, useEffect } from "react";
+import { BoardDAO } from "../../../api/BoardDAO";
 import { AppContext } from "../../../contexts/AppContext";
+import { useBoardId } from "../../../hooks/useBoardId";
 import { useTranslation } from "../../../hooks/useTranslation";
 import { NoteType } from "../../../types/NoteType";
 import BoardSection from "../boardSection/BoardSection";
@@ -9,9 +11,12 @@ import styles from "./Board.module.css";
 const Board: React.FC = () => {
   const { t } = useTranslation();
   const context = useContext(AppContext);
+  const boardId = useBoardId();
 
   useEffect(() => {
     async function fetchNotes() {
+      const notes = await BoardDAO.findNotes(boardId);
+      context.notes.positiveDAO.onAdd(...notes);
     }
 
     fetchNotes();
