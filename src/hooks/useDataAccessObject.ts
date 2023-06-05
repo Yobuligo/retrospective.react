@@ -32,5 +32,5 @@ export const useDataAccessObject = <T>(
     []
   );
 
-  return { dataObjects, onAdd, onDelete, onUpdate };
+  return { dataObjects, onAdd, onDelete, onUpdate, setDataObjects };
 };

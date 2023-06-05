@@ -16,13 +16,13 @@ const Board: React.FC = () => {
   useEffect(() => {
     async function fetchNotes() {
       const boardData = await BoardDAO.findNotes(boardId);
-      context.notes.positiveDAO.onAdd(...boardData.positive);
-      context.notes.negativeDAO.onAdd(...boardData.negative);
-      context.notes.proposalDAO.onAdd(...boardData.proposal);
+      context.notes.positiveDAO.setDataObjects(boardData.positive);
+      context.notes.negativeDAO.setDataObjects(boardData.negative);
+      context.notes.proposalDAO.setDataObjects(boardData.proposal);
     }
 
     fetchNotes();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

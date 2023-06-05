@@ -3,4 +3,5 @@ export interface IDataAccessObject<T> {
   onAdd: (...dataObjects: T[]) => void;
   onDelete: (dataObject: T) => void;
   onUpdate: (dataObject: T) => void;
+  setDataObjects: (dataObjects: T[]) => void;
 }
