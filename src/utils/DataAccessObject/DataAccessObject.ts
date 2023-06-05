@@ -2,7 +2,7 @@ import { IDataObject } from "../../types/IDataObject";
 
 export class DataAccessObject<T extends IDataObject> {
   create(props: Omit<T, "id" | "isLoading">): T {
-    return { id: crypto.randomUUID(), isLoading: false, ...props } as T;
+    return { id: crypto.randomUUID(), isLoading: true, ...props } as T;
     // return new Promise((resolve) => {
     //   setTimeout(() => {
     //     resolve({ id: crypto.randomUUID(), ...props } as T);
