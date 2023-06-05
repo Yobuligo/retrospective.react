@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Note } from "../../../api/Note";
+import { useParams } from "react-router-dom";
+import { Board } from "../../../api/Board";
 import { VotingState } from "../../../types/VotingState";
+import { error } from "../../../utils/error";
 import NoteCardList from "../noteCardList/NoteCardList";
 import NoteInput from "../noteInput/NoteInput";
 import { INoteSectionProps } from "./INoteSectionProps";
@@ -8,10 +10,12 @@ import styles from "./NoteSection.module.css";
 
 const NoteSection: React.FC<INoteSectionProps> = (props) => {
   const [showLoadingSpinner, setShowLoadingSpinner] = useState(false);
+  const params = useParams<{ boardId: string }>();
+  const boardId = params.boardId ?? error("No BoardId");
 
   const onAdd = async (text: string) => {
     setShowLoadingSpinner(true);
-    const note = await Note.create({
+    const note = await Board.addNote(boardId, {
       countAgrees: 0,
       countDisagrees: 0,
       votingState: VotingState.Open,
