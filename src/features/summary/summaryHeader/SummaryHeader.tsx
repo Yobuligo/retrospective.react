@@ -1,5 +1,5 @@
 import { NoteType } from "../../../types/NoteType";
-import { style } from "../../../utils/Styles";
+import { style } from "../../../utils/Style";
 import { ISummaryHeaderProps } from "./ISummaryHeaderProps";
 import styles from "./SummaryHeader.module.css";
 

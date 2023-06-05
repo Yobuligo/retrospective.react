@@ -1,5 +1,5 @@
 import { NoteType } from "../../../types/NoteType";
-import { style } from "../../../utils/Styles";
+import { style } from "../../../utils/Style";
 import VotingSection from "../../voting/votingSection/VotingSection";
 import NoteDelete from "../noteDelete/NoteDelete";
 import NoteEdit from "../noteEdit/NoteEdit";

@@ -1,4 +1,4 @@
-import { style } from "../../utils/Styles";
+import { style } from "../../utils/Style";
 import styles from "./Card.module.css";
 import { ICardProps } from "./ICardProps";
 

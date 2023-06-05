@@ -1,4 +1,4 @@
-import { style } from "../../utils/Styles";
+import { style } from "../../utils/Style";
 import { IIconProps } from "./IIconProps";
 
 const Icon: React.FC<IIconProps> = (props) => {
