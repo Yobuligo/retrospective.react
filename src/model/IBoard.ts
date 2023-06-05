@@ -1,3 +1,3 @@
-import { IHaveId } from "../types/IHaveId";
+import { IDataObject } from "../types/IDataObject";
 
-export interface IBoard extends IHaveId {}
+export interface IBoard extends IDataObject {}

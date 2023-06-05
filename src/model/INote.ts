@@ -1,7 +1,7 @@
-import { IHaveId } from "../types/IHaveId";
+import { IDataObject } from "../types/IDataObject";
 import { VotingState } from "../types/VotingState";
 
-export interface INote extends IHaveId {
+export interface INote extends IDataObject {
   countAgrees: number;
   countDisagrees: number;
   text: string;
