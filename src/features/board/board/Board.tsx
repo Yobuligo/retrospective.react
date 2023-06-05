@@ -15,11 +15,14 @@ const Board: React.FC = () => {
 
   useEffect(() => {
     async function fetchNotes() {
-      const notes = await BoardDAO.findNotes(boardId);
-      context.notes.positiveDAO.onAdd(...notes);
+      const boardData = await BoardDAO.findNotes(boardId);
+      context.notes.positiveDAO.onAdd(...boardData.positive);
+      context.notes.negativeDAO.onAdd(...boardData.negative);
+      context.notes.proposalDAO.onAdd(...boardData.proposal);
     }
 
     fetchNotes();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
