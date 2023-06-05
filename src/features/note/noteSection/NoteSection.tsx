@@ -1,6 +1,5 @@
 import { Note } from "../../../api/Note";
 import { VotingState } from "../../../types/VotingState";
-import { LoadingSpinner } from "../../../components/loadingSpinner/LoadingSpinner";
 import NoteCardList from "../noteCardList/NoteCardList";
 import NoteInput from "../noteInput/NoteInput";
 import { INoteSectionProps } from "./INoteSectionProps";

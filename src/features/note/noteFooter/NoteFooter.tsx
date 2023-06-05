@@ -1,6 +1,6 @@
+import { LoadingSpinner } from "../../../components/loadingSpinner/LoadingSpinner";
 import { NoteType } from "../../../types/NoteType";
 import { style } from "../../../utils/Style";
-import { LoadingSpinner } from "../../../components/loadingSpinner/LoadingSpinner";
 import VotingSection from "../../voting/votingSection/VotingSection";
 import NoteDelete from "../noteDelete/NoteDelete";
 import NoteEdit from "../noteEdit/NoteEdit";
@@ -27,7 +27,7 @@ const NoteFooter: React.FC<INoteFooterProps> = (props) => {
   return (
     <div className={style(styles.noteFooter, backgroundColor())}>
       <div className={styles.noteFooterLoadingSpinner}>
-        <LoadingSpinner />
+        {props.note.isLoading && <LoadingSpinner />}
       </div>
       <div className={styles.noteFooterControls}>
         <VotingSection note={props.note} />

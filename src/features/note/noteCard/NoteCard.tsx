@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../../../components/card/Card";
 import { useToggle } from "../../../hooks/useToggle";
 import NoteFooter from "../noteFooter/NoteFooter";
