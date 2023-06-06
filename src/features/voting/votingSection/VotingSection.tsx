@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { BoardDAO } from "../../../api/BoardDAO";
 import { VotingState } from "../../../types/VotingState";
 import AgreeButton from "../votingButton/agreeButton/AgreeButton";
 import DisagreeButton from "../votingButton/disagreeButton/DisagreeButton";
@@ -7,9 +8,14 @@ import { IVotingSectionProps } from "./IVotingSectionProps";
 const VotingSection: React.FC<IVotingSectionProps> = (props) => {
   const [votingState, setVotingState] = useState(props.note.votingState);
   const [countAgree, setCountAgree] = useState(props.note.countAgrees);
-  const [countDisagree, setCountDisagree] = useState(
-    props.note.countDisagrees
-  );
+  const [countDisagree, setCountDisagree] = useState(props.note.countDisagrees);
+
+  useEffect(() => {
+    async function updateNote() {
+      await BoardDAO.updateNote(props.note);
+    }
+    updateNote();
+  }, [props.note, props.note.countAgrees, props.note.countDisagrees]);
 
   const toggleVote = (votingState: VotingState) => {
     props.note.votingState = votingState;

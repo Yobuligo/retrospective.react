@@ -41,17 +41,6 @@ export class BoardDAO extends DataAccessObject<IBoard> {
     });
   }
 
-  static findNotes(boardId: string): Promise<IBoardData> {
-    return new Promise((resolve) => {
-      const item = localStorage.getItem(boardId);
-      if (item) {
-        resolve(JSON.parse(item));
-      } else {
-        resolve({ positive: [], negative: [], proposal: [] });
-      }
-    });
-  }
-
   static deleteNote(boardId: string, note: INote): Promise<boolean> {
     const item = localStorage.getItem(boardId);
     if (!item) {
@@ -100,6 +89,56 @@ export class BoardDAO extends DataAccessObject<IBoard> {
     });
   }
 
+  static findNotes(boardId: string): Promise<IBoardData> {
+    return new Promise((resolve) => {
+      const item = localStorage.getItem(boardId);
+      if (item) {
+        resolve(JSON.parse(item));
+      } else {
+        resolve({ positive: [], negative: [], proposal: [] });
+      }
+    });
+  }
+
+  static updateNote(note: INote): Promise<boolean> {
+    const boardId = note.boardId;
+    const item = localStorage.getItem(boardId);
+    if (!item) {
+      return new Promise((_, reject) => {
+        reject(new Error("Board and note not found"));
+      });
+    }
+
+    const boardData: IBoardData = JSON.parse(item);
+    switch (note.noteType) {
+      case NoteType.Positive: {
+        return this.updateList(boardId, note, boardData, boardData.positive);
+      }
+      case NoteType.Negative: {
+        return this.updateList(boardId, note, boardData, boardData.negative);
+      }
+      case NoteType.Proposal: {
+        return this.updateList(boardId, note, boardData, boardData.proposal);
+      }
+      default:
+        throw new Error("Error updating note");
+    }
+  }
+
+  private static updateList(
+    boardId: string,
+    note: INote,
+    boardData: IBoardData,
+    notes: INote[]
+  ): Promise<boolean> {
+    return new Promise((resolve) => {
+      const index = notes.findIndex((element) => element.id === note.id);
+      notes.splice(index, 1, note);
+      this.saveBoardData(boardId, boardData);
+      resolve(true);
+    });
+  }
+
   private static removeNoteFromList(
     boardId: string,
     note: INote,
@@ -111,7 +150,11 @@ export class BoardDAO extends DataAccessObject<IBoard> {
       return false;
     }
     notes.splice(index, 1);
-    localStorage.setItem(boardId, JSON.stringify(boardData));
+    this.saveBoardData(boardId, boardData);
     return true;
+  }
+
+  private static saveBoardData(boardId: string, boardData: IBoardData) {
+    localStorage.setItem(boardId, JSON.stringify(boardData));
   }
 }

@@ -15,6 +15,7 @@ const NoteSection: React.FC<INoteSectionProps> = (props) => {
   const onAdd = async (text: string) => {
     setShowLoadingSpinner(true);
     const note = await BoardDAO.addNote(boardId, {
+      boardId: boardId,
       countAgrees: 0,
       countDisagrees: 0,
       noteType: props.noteType,
