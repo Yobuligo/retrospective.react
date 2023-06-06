@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import BoardPage from "../pages/BoardPage";
-import HomePage from "../pages/HomePage";
+import HomePage from "../pages/Homepage";
 
 export const AppRouter = createBrowserRouter([
   { index: true, element: <HomePage /> },

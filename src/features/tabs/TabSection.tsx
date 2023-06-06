@@ -1,10 +1,19 @@
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import { Suspense, lazy, useState } from "react";
+import { ComponentType, Suspense, lazy, useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
+import { SummaryLoading } from "../summary/summaryFrame/SummaryLoading";
 
 const Board = lazy(() => import("../board/board/Board"));
-const SummaryPage = lazy(() => import("../../pages/SummaryPage"));
+// const SummaryPage = lazy(() => import("../../pages/SummaryPage"));
+const SummaryPage = lazy(
+  () =>
+    new Promise<{ default: ComponentType<any> }>((resolve) => {
+      setTimeout(() => {
+        resolve(import("../../pages/SummaryPage"));
+      }, 5000);
+    })
+);
 
 export const TabSection: React.FC = () => {
   const { t } = useTranslation();
@@ -21,7 +30,7 @@ export const TabSection: React.FC = () => {
       }
       case 1: {
         return (
-          <Suspense fallback={<p>...Loading</p>}>
+          <Suspense fallback={<SummaryLoading />}>
             <SummaryPage />
           </Suspense>
         );
