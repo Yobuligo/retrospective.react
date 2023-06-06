@@ -10,4 +10,5 @@ export type IAppContext = {
     proposalDAO: IDataAccessObject<INote>;
   };
   language: IValue<LanguageType>;
+  user: IValue<string>;
 };
