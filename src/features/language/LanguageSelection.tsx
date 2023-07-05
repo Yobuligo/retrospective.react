@@ -14,7 +14,7 @@ export const LanguageSelection: React.FC = () => {
   return (
     <div className={styles.languageSelection}>
       <div className={styles.languageSelectionText}>{t.language}</div>
-      <div >
+      <div>
         <select
           value={LanguageType[language]}
           onChange={(event) => {

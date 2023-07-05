@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: right;
   font-size: medium;
+  /* background-color: var(--paleBackground); */
 }
 
 .languageSelection option {

@@ -29,7 +29,7 @@ const BoardTitle: React.FC<IBoardTitleProps> = (props) => {
       >
         {title}
       </span>
-      <button onClick={toggle}>
+      <button className={styles.editButton} onClick={toggle}>
         <Icon icon={IconType.Edit} />
       </button>
     </div>

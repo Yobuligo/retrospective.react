@@ -8,7 +8,7 @@ function App() {
   return (
     <ErrorBoundary>
       <AppContextProvider>
-        <RouterProvider router={AppRouter} />
+          <RouterProvider router={AppRouter} />
       </AppContextProvider>
     </ErrorBoundary>
   );

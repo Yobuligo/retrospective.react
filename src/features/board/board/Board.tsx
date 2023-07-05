@@ -8,6 +8,8 @@ import BoardSection from "../boardSection/BoardSection";
 import BoardTitle from "../boardTitle/BoardTitle";
 import styles from "./Board.module.css";
 import Card from "../../../components/card/Card";
+import { CSSProperties } from "@mui/material/styles/createMixins";
+import { Color } from "../../types/Color";
 
 const Board: React.FC = () => {
   const { t } = useTranslation();
@@ -37,6 +39,7 @@ const Board: React.FC = () => {
             noteType={NoteType.Positive}
             dataObject={context.notes.positiveDAO}
             name={t.titlePositive}
+            backgroundColor={Color.positiveGreen}
           />
         </div>
         <div className={styles.boardSection}>
@@ -44,6 +47,7 @@ const Board: React.FC = () => {
             noteType={NoteType.Negative}
             dataObject={context.notes.negativeDAO}
             name={t.titleNegative}
+            backgroundColor={Color.negativeRed}
           />
         </div>
         <div className={styles.boardSection}>
@@ -51,6 +55,7 @@ const Board: React.FC = () => {
             noteType={NoteType.Proposal}
             dataObject={context.notes.proposalDAO}
             name={t.titleProposal}
+            backgroundColor={Color.ideaYellow}
           />
         </div>
       </Card>
