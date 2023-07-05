@@ -5,6 +5,7 @@ import Input from "../../../components/input/Input";
 import { LoadingSpinner } from "../../../components/loadingSpinner/LoadingSpinner";
 import { INoteInputProps } from "./INoteInputProps";
 import styles from "./NoteInput.module.css";
+import Card from "../../../components/card/Card";
 
 const NoteInput: React.FC<INoteInputProps> = (props) => {
   const [note, setNote] = useState<string>("");
@@ -29,8 +30,9 @@ const NoteInput: React.FC<INoteInputProps> = (props) => {
     setNote(event.target.value);
 
   return (
-    <div className={styles.topic}>
+    <Card className={styles.topic}>
       <Input
+        className={styles.inputField}
         type="text"
         value={note}
         placeholder={props.hint}
@@ -44,7 +46,7 @@ const NoteInput: React.FC<INoteInputProps> = (props) => {
           <Icon icon={IconType.Add} />
         )}
       </button>
-    </div>
+    </Card>
   );
 };
 

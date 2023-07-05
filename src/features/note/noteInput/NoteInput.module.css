@@ -1,12 +1,22 @@
 .topic {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-.topic input {
+.inputField {
   font-size: large;
   border: 0px;
   border-bottom: 1px #000 solid;
 }
 
+.inputField:focus-visible{
+  outline: none;
+}
+
 .topic button {
   font-size: large;
+  border-radius: 12px;
+  cursor: pointer;
 }

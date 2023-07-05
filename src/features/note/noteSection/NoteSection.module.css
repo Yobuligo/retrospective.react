@@ -1,3 +1,4 @@
 .noteSectionList{
     margin-top: 1rem;
+    z-index: 10;
 }
