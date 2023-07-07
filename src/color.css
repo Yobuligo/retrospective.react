@@ -1,7 +1,6 @@
 :root {
-  /* --positive: rgba(0, 128, 0, 0.205); */
   --positive: rgb(147, 197, 82);
-  --negative: rgba(255, 0, 0, 0.267);
-  --proposal: rgba(255, 255, 0, 0.212);
-  --paleBackground: #ffffff86;
+  --negative: #d14d44;
+  --proposal: #ffcd45;
+  --paleBackground: #ffffffbb;
 }

@@ -4,6 +4,7 @@ import { ComponentType, Suspense, lazy, useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
 import { SummaryLoading } from "../summary/summaryFrame/SummaryLoading";
 import { ITabSectionProps } from "./ITabSectionProps";
+import { styled } from "@mui/material";
 
 const Board = lazy(() => import("../board/board/Board"));
 // const SummaryPage = lazy(() => import("../../pages/SummaryPage"));
@@ -39,13 +40,36 @@ export const TabSection: React.FC<ITabSectionProps> = (props) => {
     }
   };
 
+  const StyledTabs = styled(Tabs)`
+    background-color: var(--paleBackground);
+    border-radius: 10px 10px 0 0;
+  `;
+
+  const StyledTab = styled(Tab)({
+    fontFamily: "inherit",
+    color: "#444444",
+    fontSize: "large",
+    fontWeight: 700,
+    "&.Mui-selected": {
+      color: "black",
+    },
+  });
+
   return (
     <div className={props.className}>
       <span className={props.classNameTabs}>
-        <Tabs value={page} onChange={(_, value) => setPage(value)}>
-          <Tab label={t.tabs.board} />
-          <Tab label={t.tabs.summary} />
-        </Tabs>
+        <StyledTabs
+          value={page}
+          onChange={(_, value) => setPage(value)}
+          TabIndicatorProps={{
+            style: {
+              backgroundColor: "black",
+            },
+          }}
+        >
+          <StyledTab label={t.tabs.board} />
+          <StyledTab label={t.tabs.summary} />
+        </StyledTabs>
       </span>
       <div className={props.classNameContent}>{content()}</div>
     </div>
