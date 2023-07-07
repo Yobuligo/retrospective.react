@@ -2,3 +2,13 @@
     margin-right: 2rem;
     margin-top: 2rem;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabSection {
+    display: flex;
+    justify-content: center;
+}

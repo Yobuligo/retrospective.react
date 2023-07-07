@@ -1,15 +1,13 @@
 import { useContext, useEffect } from "react";
 import { BoardDAO } from "../../../api/BoardDAO";
+import Card from "../../../components/card/Card";
 import { AppContext } from "../../../contexts/AppContext";
 import { useBoardId } from "../../../hooks/useBoardId";
 import { useTranslation } from "../../../hooks/useTranslation";
 import { NoteType } from "../../../types/NoteType";
-import BoardSection from "../boardSection/BoardSection";
-import BoardTitle from "../boardTitle/BoardTitle";
-import styles from "./Board.module.css";
-import Card from "../../../components/card/Card";
-import { CSSProperties } from "@mui/material/styles/createMixins";
 import { Color } from "../../types/Color";
+import BoardSection from "../boardSection/BoardSection";
+import styles from "./Board.module.css";
 
 const Board: React.FC = () => {
   const { t } = useTranslation();
@@ -30,10 +28,7 @@ const Board: React.FC = () => {
 
   return (
     <div className={styles.board}>
-      <div className={styles.boardTitle}>
-        <BoardTitle />
-      </div>
-      <Card className={styles.boardSections}>
+      <div className={styles.boardSections}>
         <div className={styles.boardSection}>
           <BoardSection
             noteType={NoteType.Positive}
@@ -58,7 +53,7 @@ const Board: React.FC = () => {
             backgroundColor={Color.ideaYellow}
           />
         </div>
-      </Card>
+      </div>
     </div>
   );
 };

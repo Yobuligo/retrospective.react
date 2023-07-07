@@ -15,8 +15,12 @@
   outline: none;
 }
 
-.topic button {
+.addButton {
   font-size: large;
-  border-radius: 12px;
+  border-radius: 50%;
   cursor: pointer;
+}
+
+.addButton span{
+  color: black;
 }

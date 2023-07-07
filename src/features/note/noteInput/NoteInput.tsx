@@ -39,7 +39,7 @@ const NoteInput: React.FC<INoteInputProps> = (props) => {
         onChange={onChange}
         onEnter={onAdd}
       />
-      <button disabled={disableAddButton} onClick={onAdd}>
+      <button className={styles.addButton} disabled={disableAddButton} onClick={onAdd}>
         {props.showLoadingSpinner ? (
           <LoadingSpinner />
         ) : (
