@@ -1,0 +1,78 @@
+.cssAnimationPage {
+  background-color: darkblue;
+  height: 80vh;
+  width: 100%;
+}
+
+.bumpingArrow {
+  width: 15px;
+  height: 20px;
+  background: #fff;
+  margin-left: 15px;
+  margin-top: 50px;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: bump 0.4s linear infinite alternate;
+}
+.bumpingArrow::after {
+  content: "";
+  box-sizing: border-box;
+  left: 50%;
+  bottom: 100%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  border: 15px solid transparent;
+  border-bottom-color: #fff;
+
+  border-bottom-color: red;
+  background-color: yellow;
+}
+
+@keyframes bump {
+  0% {
+    transform: translate(-50%, 5px);
+  }
+  100% {
+    transform: translate(-50%, -5px);
+  }
+}
+
+.jumpingHalfCircle {
+  width: 70px;
+  height: 35px;
+  position: relative;
+  overflow: hidden;
+}
+.jumpingHalfCircle:before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 5px solid #0000;
+  border-color: #fff #fff #0000 #0000;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotate 3s ease-in-out infinite;
+  transform: rotate(-200deg);
+}
+@keyframes rotate {
+  0% {
+    border-width: 10px;
+  }
+  25% {
+    border-width: 3px;
+  }
+  50% {
+    transform: rotate(115deg);
+    border-width: 10px;
+  }
+  75% {
+    border-width: 3px;
+  }
+  100% {
+    border-width: 10px;
+  }
+}
